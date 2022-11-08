@@ -1,13 +1,20 @@
 const RPS = () => {
   return (
     <div>
-      <h2>Welcome to the Game Room</h2>
-      <p>
-        We hope you enjoy our selection of games to play from the list on the
-        left.
-      </p>
-      <h2>Highscores:</h2>
-      <ol>Top players</ol>
+      <h2>Rock Paper Scissors</h2>
+      <h2>
+        Your Choice: <span></span>
+      </h2>
+      <h2>
+        Computer Choice: <span></span>
+      </h2>
+      <h2>
+        Winner: <span></span>
+      </h2>
+      <button>Rock</button>
+      <button>Paper</button>
+      <button>Scissors</button>
+      <p></p>
     </div>
   );
 };
