@@ -5,5 +5,6 @@ const gameRoutes = require('./game-routes');
 
 router.use('/users', userRoutes);
 router.use('/games', gameRoutes);
+router.use('/login', userRoutes);
 
 module.exports = router;
