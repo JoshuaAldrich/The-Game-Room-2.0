@@ -1,6 +1,6 @@
 import HoT from "./headsOrTails";
 import HoL from "./highOrLow";
-import Login from "./login";
+import Login from "./Login";
 import RPS from "./rockPaperScissors";
 import Home from "./Homepage";
 import Nav from "./Nav";
@@ -18,6 +18,7 @@ const App = () => {
           <Route path="/RPS" element={<RPS />} />
           <Route path="/HoL" element={<HoL />} />
           <Route path="/HoT" element={<HoT />} />
+          <Route path="/" component={Login}/>
         </Routes>
       </div>
       <article id="contact" class="contact-me">

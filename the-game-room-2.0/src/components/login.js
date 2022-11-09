@@ -1,36 +1,35 @@
-const Login = () => {
-  return (
-    <div>
-      <h2>Sign up</h2>
-      <form action="/auth" method="post">
-        <label for="username">
-          <i class="fas fa-user"></i>
-        </label>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          id="sign-username"
-        />
+import React from "react";
+class  Login extends React.Component{
+  state={
+    email:"",
+    pwd:"",
+  
+  }
+  handleChange = (e) =>{
+    const {name, value}= e.target
+    this.setState({[name]:value})
 
-        <label for="username">
-          <i class="fas fa-at"></i>
-        </label>
-        <input type="text" name="email" placeholder="Email" id="sign-email" />
+  }
+  handleSubmit = (e) =>{
 
-        <label for="password">
-          <i class="fas fa-lock"></i>
-        </label>
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          id="sign-password"
-        />
-        <input type="submit" value="Sign Up" />
-      </form>
-    </div>
-  );
-};
+  }
+  render(){
+    return<>
+      
+      <div>
+      </div>
+      <div>
+        <form>
+          <input type="email" name="email" placeholder="email" required
+           onChange={this.handleChange}/>
+          <input type="password" name="pwd" placeholder="password" required
+           onChange={this.handleChange}/>
+          <button onsubmit>Login</button>
+          <button onsubmit> Create Account</button>
+        </form>
+      </div>
+    </>
+  }
+}
 
 export default Login;
