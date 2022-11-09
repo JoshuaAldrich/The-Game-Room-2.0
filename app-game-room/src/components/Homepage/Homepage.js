@@ -1,11 +1,11 @@
 import React from "react";
+import Header from "../Nav/Header";
 
 import './Homepage.css';
 
 
 const Homepage = () => {
     return (
-
 
         <div className="container-fluid">
             <div className="row text-center justify-content-center p-5 homepage ">
