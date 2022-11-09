@@ -1,35 +1,26 @@
-import React from "react";
-class  Login extends React.Component{
-  state={
-    email:"",
-    pwd:"",
-  
-  }
-  handleChange = (e) =>{
-    const {name, value}= e.target
-    this.setState({[name]:value})
+import axios from "axios";
+import {Navigate} from "react-router-dom";
+import {useState} from "react";
 
-  }
-  handleSubmit = (e) =>{
+export const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [navigate, setNavigate] = useState(false);
 
-  }
-  render(){
-    return<>
-      
-      <div>
-      </div>
-      <div>
-        <form>
-          <input type="email" name="email" placeholder="email" required
-           onChange={this.handleChange}/>
-          <input type="password" name="pwd" placeholder="password" required
-           onChange={this.handleChange}/>
-          <button onsubmit>Login</button>
-          <button onsubmit> Create Account</button>
-        </form>
-      </div>
-    </>
-  }
-}
+    const submit = async e => {
+        e.preventDefault();
 
-export default Login;
+        const {data} = await axios.post('login', {
+            email, password
+        }, {withCredentials: true});
+        axios.defaults.headers.common['Authorization'] = `Bearer ${data['token']}`;
+
+        setNavigate(true);
+    }
+
+    if (navigate) {
+        return <Navigate to="/"/>;
+    }
+
+    return <main className="form-signin">
+       
