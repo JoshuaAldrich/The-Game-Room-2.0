@@ -1,3 +1,18 @@
+const BB = () => {
+  return (
+    <div class="container-fluid">
+      <h2 class="special-card-4">BouncyBall</h2>
+
+ 
+    </div>
+  );
+};
+
+export default BB;
+
+
+
+
 const ballElem = document.querySelector("[data-ball]")
 const Ball_Haste = 0.75
 const Bounce_Motion = 180
