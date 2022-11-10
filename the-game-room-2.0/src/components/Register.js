@@ -3,8 +3,8 @@ import {Navigate} from 'react-router-dom';
 import axios from "axios";
 
 export const Register = () => {
-    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [navigate, setNavigate] = useState(false);
 
@@ -12,7 +12,7 @@ export const Register = () => {
         e.preventDefault();
 
         await axios.post('register', {
-            name, email, password
+            email, password, name
         }
     );
     setNavigate(true);

@@ -2,7 +2,7 @@ import HoT from "./headsOrTails";
 import HoL from "./highOrLow";
 import Login from "./Login";
 import RPS from "./rockPaperScissors";
-import Home from "./Homepage";
+import Home from "./Home";
 import Nav from "./Nav";
 import { Routes, Route } from "react-router-dom";
 
