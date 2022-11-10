@@ -1,40 +1,100 @@
-const Gap_Height = 200
-const Obstacle_Width = 120
-const Obstacle_INTERVAL = 1500
-const Obstacle_SPEED = 0.75
-let obstacle = []
+let obstacles = []
 let timeSinceLastObstacle
 let passedObstacleCount
+const Obstacle_Interval = 1432
+const Gap_Height = 190
+const Obstacle_Width = 110
+const Obstacle_movement = 0.74
 
-export function setupObstacle() {
+export function setupObstacles() {
   document.documentElement.style.setProperty("--obstacle-width", Obstacle_Width)
   document.documentElement.style.setProperty("--gap-height", Gap_Height)
-  obstacle.forEach(obstacle => obstacle.remove())
-  timeSinceLastObstacle = Obstacle_INTERVAL
+  obstacles.forEach(obstacle => obstacle.remove())
+  timeSinceLastObstacle = Obstacle_Interval
   passedObstacleCount = 0
 }
 
-export function updateObstacle(delta) {
+export function updateObstacles(delta) {
   timeSinceLastObstacle += delta
 
-  if (timeSinceLastObstacle > Obstacle_INTERVAL) {
-    timeSinceLastObstacle -= Obstacle_INTERVAL
+  if (timeSinceLastObstacle > Obstacle_Interval) {
+    timeSinceLastObstacle -= Obstacle_Interval
     createObstacle()
   }
 
-  obstacle.forEach(pipe => {
-    if (pipe.left + Obstacle_Width< 0) {
+  obstacles.forEach(obstacle => {
+    if (obstacle.left + Obstacle_Width< 0) {
       passedObstacleCount++
-      return pipe.remove()
+      return obstacle.remove()
     }
-    pipe.left = pipe.left - delta * Obstacle_SPEED
-  })
+    obstacle.left = obstacle.left - delta * Obstacle_movement
+  }
+  )
 }
 
-export function getPassedObstacleCount() {
+export function getPassedObstaclesCount() {
   return passedObstacleCount
 }
 
 export function getObstacleRects() {
-  return obstacle.flatMap(pipe => pipe.rects())
+  return obstacles.flatMap
+  (obstacle => obstacle.rects())
+}
+
+
+function createObstacle() {
+  const obstacleElem = document.createElement("div")
+  const topElem = createObstacleSegment("top")
+  const bottomElem = createObstacleSegment("bottom")
+  obstacleElem.append(topElem)
+  obstacleElem.append(bottomElem)
+  obstacleElem.classList.add("obstacle")
+  obstacleElem.style.setProperty(
+    "--hole-top",
+    randomNumberBetween(
+      Gap_Height * 1.4,
+      window.innerHeight - Gap_Height * 0.4
+    )
+  )
+  const obstacle = {
+    get left() {
+      return parseFloat(
+        getComputedStyle(obstacleElem).getPropertyValue
+        ("--obstacle-left")
+      )
+    },
+    set left(value) {
+      obstacleElem.style.setProperty
+      ("--obstacle-left", value)
+    },
+    remove() {
+      obstacles = obstacles.filter
+      (p => p !== obstacle)
+      obstacleElem.remove()
+    },
+    rects() {
+      return [
+        topElem.getBoundingClientRect(),
+        bottomElem.getBoundingClientRect(),
+      ]
+    },
+  }
+  obstacle.left = window.innerWidth
+  document.body.append
+  (obstacleElem)
+  obstacles.push(obstacle)
+}
+
+function createObstacleSegment(position) 
+{
+  const segment = document.createElement
+  ("div")
+  segment.classList.add
+  ("segment", position)
+  return segment
+}
+
+function randomNumberBetween(min, max) 
+{
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
