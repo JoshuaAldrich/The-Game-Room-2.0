@@ -33,9 +33,9 @@ export const Home = () => {
         <p>We hope you enjoy our selection of games to play from the list on the left.</p>
         <h2>Highscores:</h2>
       <ol>Top players</ol>
-        <a href="javascript:void(0)" className="btn btn-lg btn-primary"
+        <p className="btn btn-lg btn-primary"
            onClick={logout}
-        >Logout</a>
+        >Logout</p>
     </div>
 }
 export default Home;
