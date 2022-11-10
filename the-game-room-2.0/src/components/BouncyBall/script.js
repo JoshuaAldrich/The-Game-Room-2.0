@@ -1,9 +1,9 @@
 import { updateBall, setupBall, getBallRect } from "./BouncyBall"
 import {
-  updateObstacle,
-  setupObstable,
-  getPassedObstableCount,
-  getobstableRects,
+  updateObstacles,
+  setupObstacles,
+  getPassedObstaclesCount,
+  getObstaclesRects,
 } from "./obstable.js"
 
 document.addEventListener("keypress", handleStart, { once: true })
@@ -18,3 +18,43 @@ function updateLoop(time) {
     return
   }
   
+  const delta = time - lastTime
+  updateBall(delta)
+  updateObstacles(delta)
+  if (checkLose()) return handleLose()
+  lastTime = time
+  window.requestAnimationFrame(updateLoop)
+}
+
+function checkLose() {
+  const birdRect = getBallRect()
+  const insidePipe = getObstaclesRects().some(rect => isCollision(birdRect, rect))
+  const outsideWorld = birdRect.top < 0 || birdRect.bottom > window.innerHeight
+  return outsideWorld || insidePipe
+}
+
+function isCollision(rect1, rect2) {
+  return (
+    rect1.left < rect2.right &&
+    rect1.top < rect2.bottom &&
+    rect1.right > rect2.left &&
+    rect1.bottom > rect2.top
+  )
+}
+
+function handleStart() {
+  title.classList.add("hide")
+  setupBall()
+  setupObstacles()
+  lastTime = null
+  window.requestAnimationFrame(updateLoop)
+}
+
+function handleLose() {
+  setTimeout(() => {
+    title.classList.remove("hide")
+    subtitle.classList.remove("hide")
+    subtitle.textContent = `${getPassedObstaclesCount()} Obstacles`
+    document.addEventListener("keypress", handleStart, { once: true })
+  }, 100)
+}
