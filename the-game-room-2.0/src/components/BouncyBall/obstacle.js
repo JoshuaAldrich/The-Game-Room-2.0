@@ -22,19 +22,19 @@ export function updateObstacle(delta) {
     createObstacle()
   }
 
-  pipes.forEach(pipe => {
+  obstacle.forEach(pipe => {
     if (pipe.left + Obstacle_Width< 0) {
-      passedPipeCount++
+      passedObstacleCount++
       return pipe.remove()
     }
-    pipe.left = pipe.left - delta * PIPE_SPEED
+    pipe.left = pipe.left - delta * Obstacle_SPEED
   })
 }
 
 export function getPassedObstacleCount() {
-  return passedPipeCount
+  return passedObstacleCount
 }
 
 export function getObstacleRects() {
-  return pipes.flatMap(pipe => pipe.rects())
+  return obstacle.flatMap(pipe => pipe.rects())
 }
