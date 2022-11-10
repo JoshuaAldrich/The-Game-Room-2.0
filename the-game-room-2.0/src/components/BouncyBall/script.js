@@ -1,8 +1,8 @@
 import { updateBall, setupBall, getBallRect } from "./BouncyBall"
 import {
-  updatePipes,
-  setupobstable,
-  getPassedobstableCount,
+  updateObstacle,
+  setupObstable,
+  getPassedObstableCount,
   getobstableRects,
 } from "./obstable.js"
 
@@ -17,3 +17,4 @@ function updateLoop(time) {
     window.requestAnimationFrame(updateLoop)
     return
   }
+  

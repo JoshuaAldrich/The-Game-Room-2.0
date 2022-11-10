@@ -1,19 +1,21 @@
 const ballElem = document.querySelector("[data-ball]")
-const Ball_Haste = 0.45
-const Bounce_Motion = 124
+const Ball_Haste = 0.75
+const Bounce_Motion = 180
 let BounceGap = Number.POSITIVE_INFINITY
 
 export function setupBall() 
 {
-  setTop(window.innerHeight / 2)
+  setTop(window.innerHeight / 1.4)
   document.removeEventListener("keydown", handleJump)
   document.addEventListener("keydown", handleJump)
 }
 export function updateBall(momentum) 
 {
-  if (BounceGap < Bounce_Motion) {
+  if (BounceGap < Bounce_Motion) 
+  {
     setTop(getTop() - Ball_Haste * momentum)
-  } else {
+  } else 
+  {
     setTop(getTop() + Ball_Haste * momentum)
   }
   BounceGap += momentum
