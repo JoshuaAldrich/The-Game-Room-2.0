@@ -1,48 +1,68 @@
-import axios from "axios";
-import {Navigate} from "react-router-dom";
-import {useState} from "react";
+import React, { useState } from 'react';
+import { setUserSession } from './Utils/TokenUser';
+import axios from 'axios';
 
-export const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [navigate, setNavigate] = useState(false);
+function Login(props) {
+  const [loading, setLoading] = useState(false);
+  const username = useFormInput('');
+  const password = useFormInput('');
+  const [error, setError] = useState(null);
 
-    const submit = async e => {
-        e.preventDefault();
-
-        const {data} = await axios.post('login', {
-            email, password
-        }, {withCredentials: true});
-        axios.defaults.headers.common['Authorization'] = `Bearer ${data['token']}`;
-
-        setNavigate(true);
+  const handleLogin = () => {
+    setError(null);
+    setLoading(true);
+    axios.post('http://localhost:4000/users/signin', 
+    { username: username.value, password: password.value }
+    ).then(response => {
+      setLoading(false);
+      setUserSession(response.data.token,
+         response.data.user);
+      props.history.push('/dashboard');
+    }).catch(error => {
+      setLoading(false);
+      if (error.response.status === 401) 
+      setError(error.response.data.message);
+      else 
+      setError("opps... Something went wrong... Please try again.");
     }
+    );
+  }
 
-    if (navigate) {
-        return <Navigate to="/"/>;
-    }
-
-    return <main className="form-signin">
-        <form onSubmit={submit}>
-            <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-
-            <div className="form-floating">
-                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"
-                       onChange={e => setEmail(e.target.value)}
-                />
-                <label htmlFor="floatingInput">Email address</label>
-            </div>
-
-            <div className="form-floating">
-                <input type="password" className="form-control" id="floatingPassword" placeholder="Password"
-                       onChange={e => setPassword(e.target.value)}
-                />
-                <label htmlFor="floatingPassword">Password</label>
-            </div>
-
-            <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        </form>
-    </main>
+  return (
+    <div><strong>
+      Login<br /><br />
+      </strong>
+      <div>
+        <strong>Username</strong>
+        <br />
+        <input type="text" {...username} 
+        autoComplete="new-password" />
+      </div>
+      <div style={{ marginTop: 10 }}>
+        <strong>Password</strong>
+        <br />
+        <input type="password" {...password} 
+        autoComplete="new-password" />
+      </div>
+      {error && <>
+      <small style={{ color: 'red' }}>
+        {error}</small><br /></>}<br />
+      <input type="button" value={loading ? 
+        'Loading...' : 'Login'} 
+        onClick={handleLogin} 
+        disabled={loading} /><br />
+    </div>
+  );
+}
+const useFormInput = initialValue => {
+  const [value, setValue] = useState(initialValue);
+  const handleChange = e => {
+    setValue(e.target.value);
+  }
+  return {
+    value,
+    onChange: handleChange
+  }
 }
 
 export default Login;
