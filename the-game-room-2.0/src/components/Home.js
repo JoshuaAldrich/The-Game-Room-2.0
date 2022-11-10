@@ -25,7 +25,7 @@ export const Home = () => {
     }
 
     if (navigate) {
-        return <Navigate to="/Login"/>;
+        return <Navigate to="/Home"/>;
     }
 
     return <div className="form-signin mt-5 text-center">
