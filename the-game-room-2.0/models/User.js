@@ -1,67 +1,42 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
-const bcrypt = require("bcrypt");
+const mongoose = require("mongoose");
 
-
-//This class, Comment, and Post classes will convey what the data consists of
-class User extends Model {
-  //compares password they typed into to password associated with their account.
-  verifyPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
-User.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
-    //password length must be at least 6 char
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [6],
-      },
+let userSchema = new mongoose.Schema({
+  id: {
+    type: INTEGER,
+    autoIncrement: true,
+  },
+  username: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    validate: {
+      isEmail: true,
     },
   },
-  {
-    //hashes password before creating and updating it
-    hooks: {
-      async beforeCreate(userData) {
-
-        userData.password = await bcrypt.hash(userData.password, 10);
-
-        return userData;
-      },
-
-      async beforeUpdate(updateUserData) {
-        updateUserData.password = await bcrypt.hash(
-          updateUserData.password,
-          10
-        );
-        return updateUserData;
-      },
+  //password length must be at least 6 char
+  password: {
+    type: String,
+    required: true,
+    validate: {
+      len: [6],
     },
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "user",
-  }
-);
+  },
+  // hooks: {
+  //   async beforeCreate(userData) {
+  //     userData.password = await bcrypt.hash(userData.password, 10);
 
-module.exports = User;
+  //     return userData;
+  //   },
+
+  //   async beforeUpdate(updateUserData) {
+  //     updateUserData.password = await bcrypt.hash(updateUserData.password, 10);
+  //     return updateUserData;
+  //   },
+  // },
+});
+
+module.exports = userSchema;
