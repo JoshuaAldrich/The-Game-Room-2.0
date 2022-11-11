@@ -23,7 +23,7 @@ function Login(props) {
       if (error.response.status === 401) 
       setError(error.response.data.message);
       else 
-      setError("opps... Something went wrong... Please try again.");
+      setError("oops... Something went wrong... Please try again.");
     }
     );
   }
