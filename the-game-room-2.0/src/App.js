@@ -1,9 +1,9 @@
-import HoT from "./headsOrTails";
-import HoL from "./highOrLow";
-import Login from "./Login";
-import RPS from "./rockPaperScissors";
-import Home from "./Home";
-import Nav from "./Nav";
+import HoT from "./components/headsOrTails";
+import HoL from "./components/highOrLow";
+import Login from "./components/Login";
+import RPS from "./components/rockPaperScissors";
+import Home from "./components/Home";
+import Nav from "./components/Nav";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -18,7 +18,6 @@ const App = () => {
           <Route path="/RPS" element={<RPS />} />
           <Route path="/HoL" element={<HoL />} />
           <Route path="/HoT" element={<HoT />} />
-          <Route path="/" component={Login}/>
         </Routes>
       </div>
       <article id="contact" class="contact-me">
