@@ -1,14 +1,25 @@
 .nav {
-  background-color: #001a20;
+  background:linear-gradient(to right,
+  rgb(1, 1, 63) 40%,
+  black 100%);
   display: flex;
   gap: 20px;
   padding: 10px 10px;
 }
+.nav {
+
+}
 
 .link {
-  color: #99eaff;
+  color: #c3d8f8;
   font-size: 25px;
   text-decoration: none;
+}
+.link:hover{
+  background-color: rgba(0, 0, 0, 0.103);
+  border:5px solid rgba(5, 151, 255, 0.2);
+  color:white;
+  text-decoration:solid
 }
 
 .link:first-child {

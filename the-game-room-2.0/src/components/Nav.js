@@ -19,6 +19,9 @@ const Nav = () => {
       <Link className={classes.link} to="/HoT">
         Heads or Tails
       </Link>
+      <Link className={classes.link} to="/BB">
+       Bouncy Ball
+      </Link>
     </nav>
   );
 };
