@@ -25,44 +25,17 @@
                 <a class="navbar-brand" href="/">The Game Room</a>
             </div>
 
-            {{!-- <ul class="nav justify-content-end">
-                <div class="btn-group col px-md-2">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/email.svg" style="width: 30px; height: 30px;"/></button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                      <li><button class="dropdown-item" type="button">Messages</button></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">All Messages</a></li>
-                    </ul>
-                </div>
-
-                <ul class="nav justify-content-end">
-                    <div class="btn-group col px-md-2">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/bell-ring.svg" style="width: 30px; height: 30px;"/></button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                          <li><button class="dropdown-item" type="button">Alerts</button></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">All Alerts</a></li>
-                        </ul>
-                </div>
-
-                <ul class="nav justify-content-end">
-                    <div class="btn-group col px-md-2">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/user.svg" style="width: 30px; height: 30px;"/></button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                          <li><button class="dropdown-item" type="button">Profile</button></li>
-                          <li><button class="dropdown-item" type="button">Settings</button></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Logout</a></li>
-                        </ul>
-                </div>             
-            </ul> --}}
+          
         </nav>
         <nav class="navbar-default navbar-side" role="navigation">
           <div class="sidebar-collapse">
               <ul class="nav flex-column">
-                <li class ="nav-item">
-                      <a class="nav-link active" href="/login"><img src="/assets/images/coin.svg" style="width: 20px;" height="20px;"/> Login</a>
-                  </li>
+                 <li class='nav-btn'><a id='dashboardBtn' href="/TheGameRoom"></a></li>
+                    {{#if loggedIn}}
+                  <li class='nav-btn'><a id='logoutBtn' onclick='logOut(event)'>Log Out</a></li>
+                    {{else}}
+                  <li class='nav-btn'><a id='loginNav' href="/login">Log In</a></li>
+                    {{/if}}
                   <li class ="nav-item">
                       <a class="nav-link active" href="/headsOrTails"><img src="/assets/images/coin.svg" style="width: 20px;" height="20px;"/> Flip a coin</a>
                   </li>
@@ -96,7 +69,8 @@
     </div>
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
-    <script src="/javascript/login.js"></script>
+    <script src="/src/components/login.js"></script>
+    <script src="/src/componentslogout.js/"></script>
     <!-- jQuery Js -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <!-- Bootstrap Js -->
