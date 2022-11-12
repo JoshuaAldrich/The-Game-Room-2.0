@@ -3,8 +3,10 @@ const userRoutes = require("./routes/User");
 // const thoughtRoutes = require("./routes/thought");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 app.use(express.json());
+app.use(cors());
 // app.use("/api/thoughts", thoughtRoutes);
 app.use("/api/users", userRoutes);
 
