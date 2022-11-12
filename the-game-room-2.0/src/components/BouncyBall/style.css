@@ -1,0 +1,67 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-color: rgb(53, 139, 237);
+  }
+  
+  .title {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    inset: 0;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    z-index: 9.8;
+  }
+    .obstacle  {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(var(--obstacle -width) * 1px);
+    left: calc(var(--obstacle -left) * 1px);
+  }
+  
+  .obstacle > .segment {
+   background:linear-gradient(to right,
+    orange 20%,
+    red 100%); 
+    position: absolute;
+    width: 100%;
+    
+  }
+  
+  .obstacle  > .top {
+    bottom: calc(var(--gap-top) * 1px);
+    top: 0;
+  }
+  
+  .obstacle  > .bottom {
+    bottom: 0;
+    top: calc(100vh - (var(--gap-top) * 1px) + calc(var(--gap-height) * 1px));
+  }
+  .subtitle {
+    margin-top: .5rem;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .ball {
+    background:linear-gradient(to right,
+    red 20%,
+    white 100%);
+    --ball-top: -900;
+    border-radius: 50%;
+    position: absolute;
+    height: 50px;
+    left: 50px;
+    top: calc(var(--ball-top) * 1px);
+    width: 50px;
+  }
+  
