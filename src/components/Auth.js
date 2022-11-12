@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { async } from "q";
 
-export default function (props) {
+export default function ({ setUser }) {
   let [authMode, setAuthMode] = useState("signin");
+  let [name, setName] = useState("");
+  let [email, setEmail] = useState("");
+  let [password, setPassword] = useState("");
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
@@ -10,7 +15,22 @@ export default function (props) {
   if (authMode === "signin") {
     return (
       <div className="Auth-form-container">
-        <form className="Auth-form">
+        <form
+          className="Auth-form"
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const res = await axios.post(
+              "http://localhost:3001/api/users/login",
+              {
+                email,
+                password,
+              }
+            );
+            console.log(res.data);
+            localStorage.setItem("token", res.data.token);
+            setUser(res.data.user);
+          }}
+        >
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="text-center">
@@ -24,6 +44,7 @@ export default function (props) {
               <input
                 type="email"
                 className="form-control mt-1"
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter email"
               />
             </div>
@@ -32,6 +53,7 @@ export default function (props) {
               <input
                 type="password"
                 className="form-control mt-1"
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
               />
             </div>
@@ -51,7 +73,23 @@ export default function (props) {
 
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form">
+      <form
+        className="Auth-form"
+        onSubmit={async (e) => {
+          e.preventDefault();
+          const res = await axios.post(
+            "http://localhost:3001/api/users/signup",
+            {
+              name,
+              email,
+              password,
+            }
+          );
+          console.log(res.data);
+          localStorage.setItem("token", res.data.token);
+          setUser(res.data.user);
+        }}
+      >
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
           <div className="text-center">
@@ -63,8 +101,9 @@ export default function (props) {
           <div className="form-group mt-3">
             <label>Full Name</label>
             <input
-              type="email"
+              type="text"
               className="form-control mt-1"
+              onChange={(e) => setName(e.target.value)}
               placeholder="e.g Jane Doe"
             />
           </div>
@@ -73,6 +112,7 @@ export default function (props) {
             <input
               type="email"
               className="form-control mt-1"
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Email Address"
             />
           </div>
@@ -81,6 +121,7 @@ export default function (props) {
             <input
               type="password"
               className="form-control mt-1"
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />
           </div>
@@ -97,3 +138,5 @@ export default function (props) {
     </div>
   );
 }
+
+//when a user logs out remove the token from local storage

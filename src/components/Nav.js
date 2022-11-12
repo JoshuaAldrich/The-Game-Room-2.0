@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import classes from "../styles/nav.module.css";
 
-const Nav = () => {
+const Nav = ({ user }) => {
   return (
     <nav className={classes.nav}>
       <Link className={classes.link} to="/">
         The Game Room
       </Link>
+      <p>{user?.name}</p>
       <Link className={classes.link} to="/Auth">
         Login
       </Link>
