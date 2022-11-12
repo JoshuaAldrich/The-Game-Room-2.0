@@ -1,14 +1,11 @@
 import React from "react";
-import Header from "../Nav/Header";
 
 import './Homepage.css';
 
 
 const Homepage = () => {
     return (
-
-        <div className="container-fluid">
-            <div className="row text-center justify-content-center p-5 homepage ">
+            <div className="row text-center justify-content-center p-3 homepage bg-dark">
                 <div className="col-md-5 text-align-center my auto">
                     <div className="card card-block d-flex" >
                         <div className="card-body align-items-center d-flex justify-content-center">
@@ -26,7 +23,6 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-        </div>
 
     )
 };
