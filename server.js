@@ -1,43 +1,17 @@
-const path = require("path");
 const express = require("express");
-const exphbs = require("express-handlebars");
-// const routes = require("./controllers");
-const helpers = require("./utils/helpers");
-
+const userRoutes = require("./routes/user");
+const thoughtRoutes = require("./routes/thought");
 const app = express();
-const PORT = process.env.PORT || 3001;
-
-const sequelize = require("./config/connection");
-
-const hbs = exphbs.create({ helpers });
-
-const session = require("express-session");
-
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
-
-const sess = {
-  secret: process.env.DB_SECRET,
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize,
-  }),
-};
-
-app.use(session(sess));
-//new trial
-// app.use(routes);
-
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
+const mongoose = require("mongoose");
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use("/api/thoughts", thoughtRoutes);
+app.use("/api/users", userRoutes);
 
-app.use(require("./controllers/"));
-
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log("Now listening"));
-});
+mongoose
+  .connect(
+    "mongodb+srv://joshuaA:abcd1234@cluster0.bnsumjl.mongodb.net/The-Game-Room?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    app.listen(3001);
+  });

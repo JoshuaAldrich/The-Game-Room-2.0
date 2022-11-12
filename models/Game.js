@@ -1,38 +1,34 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const mongoose = require("mongoose");
 
-class Game extends Model {}
-
-Game.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        wins: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0
-        },
-        plays: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0
+let gameSchema = new mongoose.Schema({
+  id: {
+    type: INTEGER,
+    required: true,
+    validate: {
+      validator: (value) => {
+        if (value.length >= 1 && value.length <= 280) {
+          return true;
+        } else {
+          return false;
         }
+      },
+      message: "Please keep your message between 1 and 280 characters.",
     },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'game'
-    }
-)
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  wins: {
+    type: INTEGER,
+    required: true,
+    defaultValue: 0,
+  },
+  plays: {
+    type: INTEGER,
+    required: true,
+    defaultValue: 0,
+  },
+});
 
-module.exports = Game;
+module.exports = gameSchema;
