@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-let userSchema = new mongoose.Schema({
+let userSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -17,10 +17,12 @@ let userSchema = new mongoose.Schema({
   },
   wins: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Game",
     },
   ],
 });
 
-module.exports = mongoose.model("User", userSchema);
+const User = model("User", userSchema);
+
+module.exports = User;
