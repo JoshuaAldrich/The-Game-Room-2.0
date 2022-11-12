@@ -7,7 +7,7 @@ const Nav = () => {
       <Link className={classes.link} to="/">
         The Game Room
       </Link>
-      <Link className={classes.link} to="/login">
+      <Link className={classes.link} to="/Auth">
         Login
       </Link>
       <Link className={classes.link} to="/RPS">

@@ -1,6 +1,6 @@
 import HoT from "./components/headsOrTails";
 import HoL from "./components/highOrLow";
-import Login from "./components/Login";
+import Auth from "./components/Auth";
 import RPS from "./components/rockPaperScissors";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
@@ -14,7 +14,7 @@ const App = () => {
       <div className="pageContainer">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/auth" element={<Auth />} />
           <Route path="/RPS" element={<RPS />} />
           <Route path="/HoL" element={<HoL />} />
           <Route path="/HoT" element={<HoT />} />
