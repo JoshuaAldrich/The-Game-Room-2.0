@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 let userSchema = new mongoose.Schema({
-  username: {
+  name: {
     type: String,
     required: true,
   },
@@ -15,6 +15,12 @@ let userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  wins: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Game",
+    },
+  ],
 });
 
-module.exports = userSchema;
+module.exports = mongoose.model("User", userSchema);
