@@ -1,21 +1,15 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-
+import './Header.css';
 function Header() {
   return (
-    <>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">The Game Room</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Login</Nav.Link>
-            <Nav.Link href="#games">Games</Nav.Link>
-            <Nav.Link href="#scores">Scores</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-    </>
+    <header>
+      <h1>The Game Room</h1>
+      <ul className="me-auto">
+        <li><a href="#home">Login </a></li>
+        <li><a href="#games">Games </a></li>
+        <li><a href="#scores">Scores </a></li>
+      </ul>
+    </header>
+
   );
 }
 

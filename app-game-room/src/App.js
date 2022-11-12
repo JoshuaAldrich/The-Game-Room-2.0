@@ -5,9 +5,9 @@ import Header from './components/Nav/Header';
 
 function App() {
   return (
-    <div className="flex-column justify-flex-start">
+    <div>
       <Header />
-      <div className='container-fluid'>
+      <div>
         <Homepage />
 
       </div>

@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background-color: lightblue;
+}
+
+ul {
+  display: inline-flex;
+  list-style: none;
+  justify-self: center;
+  align-items: center;
+}
+
+li {
+  font-size: large;
+  justify-content: space-around;
+  padding: 10px;
+}
