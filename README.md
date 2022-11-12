@@ -2,7 +2,7 @@
 
 ## Description
 
-Play a series of chance-based games and compete with other users for the high score. Hello WOrld
+Play a series of chance-based games and compete with other users for the high score.
 
 ## Usage
 
