@@ -20,7 +20,7 @@ const Nav = () => {
         Heads or Tails
       </Link>
       <Link className={classes.link} to="/BB">
-       Bouncy Ball
+        Bouncy Ball
       </Link>
     </nav>
   );
