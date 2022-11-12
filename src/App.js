@@ -5,10 +5,23 @@ import RPS from "./components/rockPaperScissors";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const App = () => {
   let [user, setUser] = useState(null);
+
+  async function getCurrentUser() {
+    let res = await axios.get("http://localhost:3001/api/users/currentUser", {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    });
+    setUser(res.data);
+  }
+  useEffect(() => {
+    getCurrentUser();
+  }, []);
 
   return (
     <>
