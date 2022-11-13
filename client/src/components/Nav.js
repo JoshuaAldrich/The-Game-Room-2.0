@@ -1,30 +1,34 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import classes from "../styles/nav.module.css";
+
 
 const Nav = ({ user }) => {
   return (
-    <nav className={classes.nav}>
-      <Link className={classes.link} to="/">
-        The Game Room
-      </Link>
-      <p>{user?.name}</p>
-      <Link className={classes.link} to="/Auth">
-        Login
-      </Link>
-      <Link className={classes.link} to="/RPS">
-        Rock Paper Scissors
-      </Link>
-      <Link className={classes.link} to="/HoL">
-        High or Low
-      </Link>
-      <Link className={classes.link} to="/HoT">
-        Heads or Tails
-      </Link>
-      <Link className={classes.link} to="/BB">
-        Bouncy Ball
-      </Link>
-    </nav>
-  );
+
+    <header className="bg-dark text-white py-2 flex-row align-center ">
+      <div className=" container d-flex justify-content-around ">
+        <Link to="/">
+          <h1>Game Room</h1>
+        </Link>
+        <div className="d-flex justify-content-center align-items-center px-2">
+          <ul>
+            <Link to="/login">
+              <a className="px-2">Login</a>
+            </Link>
+            <Link to="/HoL">
+              <a className="px-2">High Or Low</a>
+            </Link>
+            <a className="px-2">flip coin</a>
+            <a className="px-2">test</a>
+          </ul>
+
+        </div>
+
+
+      </div>
+
+    </header>
+  )
 };
 
 export default Nav;
