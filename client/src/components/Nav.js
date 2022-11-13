@@ -12,14 +12,13 @@ const Nav = ({ user }) => {
         </Link>
         <div className="d-flex justify-content-center align-items-center px-2">
           <ul>
-            <Link to="/login">
-              <a className="px-2">Login</a>
+            <Link to="/login"
+              className="px-2">Login
             </Link>
-            <Link to="/HoL">
-              <a className="px-2">High Or Low</a>
+            <Link to="/HoL"
+              className="px-2">High Or Low
             </Link>
-            <a className="px-2">flip coin</a>
-            <a className="px-2">test</a>
+
           </ul>
 
         </div>
