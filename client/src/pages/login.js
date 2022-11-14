@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from "../Utils/mutations";
+import Auth from "../Utils/auth";
 
 const Login = () => {
     const [formState, setFormState] = useState({ name: '', password: '' });
-    // const [login, { error }] = useMutation(LOGIN_USER)
+    const [login, { error }] = useMutation(LOGIN_USER)
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -17,14 +18,14 @@ const Login = () => {
 
     const handleFormSubmit = async (event) => {
         event.prevenDefault();
-        // try {
-        //     const { data } = await login({
-        //         variables: { ...formState }
-        //     });
-        //     console.log(data);
-        // } catch (e) {
-        //     console.error(e);
-        // }
+        try {
+            const { data } = await login({
+                variables: { ...formState }
+            });
+            Auth.login(data.login.token);
+        } catch (e) {
+            console.error(e);
+        }
     }
     return (
         <div className="flex-row justify-center mt-4">
@@ -50,7 +51,7 @@ const Login = () => {
 
                     <button type="submit" className="btn btn-primary mt-3">Submit</button>
                 </form>
-               
+
             </div>
 
         </div>
