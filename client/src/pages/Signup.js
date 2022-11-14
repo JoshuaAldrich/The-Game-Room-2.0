@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useMutation } from '@apollo/client';
-import { SIGNUP_ADDUSER } from "../Utils/mutations";
+import { ADD_USER } from "../Utils/mutations";
 import Auth from "../Utils/auth";
 
 const Signup = () => {
     const [formState, setFormState] = useState({ name: '', email: '', password: '' });
-    // const [signup, { error }] = useMutation(SIGNUP_ADDUSER)
+    const [addUser, { error }] = useMutation(ADD_USER)
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -17,15 +17,16 @@ const Signup = () => {
     }
 
     const handleFormSubmit = async (event) => {
-        event.prevenDefault();
-        // try {
-        //     const { data } = await addUser({
-        //         variables: { ...formState }
-        //     });
-        //     Auth.login(data.addUser.token);
-        // } catch (e) {
-        //     console.error(e);
-        // }
+        event.preventDefault();
+        try {
+            const { data } = await addUser({
+                variables: { ...formState }
+            });
+            console.log(data);
+            // Auth.login(data.addUser.token);
+        } catch (e) {
+            console.error(e);
+        }
     }
     return (
         <div className="flex-row justify-center mt-4">
@@ -60,7 +61,7 @@ const Signup = () => {
 
                     <button type="submit" className="btn btn-primary mt-3">Submit</button>
                 </form>
-                {/* {error && <div><h1>Login failed</h1></div>} */}
+                {error && <div>Sign up failed</div>}
             </div>
 
         </div>

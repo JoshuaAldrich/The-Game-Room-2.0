@@ -14,23 +14,16 @@ const Nav = ({ user }) => {
         <div className="d-flex justify-content-center align-items-center px-2">
           {auth.loggedIn() ? (
             <>
-
               <ul>
-                <p> You are logged in!</p>
-
+                <p>YOU ARE LOGGED IN!</p>
                 <Link to="/HoL"
-                  className="px-2">High Or Low
+                  className="px-2">High or Low
                 </Link>
 
               </ul>
-
-
-
-
             </>
 
           ) : (
-
             <ul>
               <Link to="/login"
                 className="px-2">Login
@@ -38,8 +31,8 @@ const Nav = ({ user }) => {
               <Link to="/signup"
                 className="px-2">Sign Up
               </Link>
-
             </ul>
+
           )}
 
         </div>

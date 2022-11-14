@@ -18,7 +18,7 @@ import RPS from "./components/rockPaperScissors";
 import Home from "./pages/Home";
 import Login from "./pages/Login"
 import Nav from "./components/Nav";
-import { useState } from "react";
+// import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from "./pages/Signup";
 
@@ -42,13 +42,12 @@ const client = new ApolloClient({
 })
 
 const App = () => {
-  let [user, setUser] = useState(null);
 
   return (
     <ApolloProvider client={client}>
 
       <div className="flex-column justify-flex-start min-100-vh">
-        <Nav user={user} />
+        <Nav />
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
