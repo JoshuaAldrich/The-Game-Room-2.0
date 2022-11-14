@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import auth from "../Utils/auth";
 
 
 const Nav = ({ user }) => {
@@ -11,15 +12,35 @@ const Nav = ({ user }) => {
           <h1>Game Room</h1>
         </Link>
         <div className="d-flex justify-content-center align-items-center px-2">
-          <ul>
-            <Link to="/login"
-              className="px-2">Login
-            </Link>
-            <Link to="/HoL"
-              className="px-2">High Or Low
-            </Link>
+          {auth.loggedIn() ? (
+            <>
 
-          </ul>
+              <ul>
+                <p> You are logged in!</p>
+
+                <Link to="/HoL"
+                  className="px-2">High Or Low
+                </Link>
+
+              </ul>
+
+
+
+
+            </>
+
+          ) : (
+
+            <ul>
+              <Link to="/login"
+                className="px-2">Login
+              </Link>
+              <Link to="/signup"
+                className="px-2">Sign Up
+              </Link>
+
+            </ul>
+          )}
 
         </div>
 

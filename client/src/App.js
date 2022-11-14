@@ -16,10 +16,11 @@ import HoT from "./components/headsOrTails";
 import HoL from './pages/HoL';
 import RPS from "./components/rockPaperScissors";
 import Home from "./pages/Home";
-import Login from "./pages/login"
+import Login from "./pages/Login"
 import Nav from "./components/Nav";
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Signup from "./pages/Signup";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -52,6 +53,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/RPS" element={<RPS />} />
             <Route path="/HoL" element={<HoL />} />
             <Route path="/HoT" element={<HoT />} />
