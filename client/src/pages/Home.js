@@ -1,21 +1,28 @@
 import React from 'react';
+import { Button, Card} from 'react-bootstrap';
+
 
 
 
 const Home = () => {
     return (
-
-        <main>
-            <div className='flex-row justify-space-between text-center pt-5'>
-                <div className='col-12'>
-                    <h1 className=''>Welcome to the Game room!</h1>
-                    <p> lorem ismpdp asa dsa dsad ksad klasn dsandaslnd laslndas</p>
-
-                </div>
-
+        <div className='Home'>
+            <div className='col-12'>
+            <Card style={{}}>
+                <Card.Img src="" />
+                <Card.Body>
+                    <Card.Title>
+                        Welcome to the Game room!
+                    </Card.Title>
+                    <Card.Text>
+                        lorem ismpdp asa dsa dsad ksad klasn dsandaslnd 
+                    </Card.Text>
+                    <Button variant='primary'>Click</Button>
+                </Card.Body>
+            </Card>
             </div>
-        </main>
-    )
-}
+        </div>
+    );
+};
 
 export default Home;
