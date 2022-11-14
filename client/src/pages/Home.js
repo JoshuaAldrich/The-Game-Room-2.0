@@ -8,8 +8,8 @@ const Home = () => {
         <main>
             <div className='flex-row justify-space-between text-center pt-5'>
                 <div className='col-12'>
-                    <h1 className=''>Welcome to the Game room!</h1>
-                    <p> lorem ismpdp asa dsa dsad ksad klasn dsandaslnd laslndas</p>
+                    <h1 className='welcome'>Welcome to the Game room!</h1>
+                    <p className='p'> We are excited to have ou enjoy our free beta games!</p>
 
                 </div>
 

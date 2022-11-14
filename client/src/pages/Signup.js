@@ -30,10 +30,10 @@ const Signup = () => {
     return (
         <div className="flex-row justify-center mt-4">
             <div className="col-12 border rounded p-3">
-                <h3>Sign Up </h3>
+                <h3 className="signup">Sign Up </h3>
                 <form onSubmit={handleFormSubmit}>
                     <div className="form-group ">
-                        <label >Name</label>
+                        <label className="Name">Name</label>
                         <input
                             type="test"
                             className="form-control"
@@ -42,7 +42,7 @@ const Signup = () => {
                         />
                     </div>
                     <div className="form-group ">
-                        <label >Email</label>
+                        <label className="Name">Email</label>
                         <input
                             type="test"
                             className="form-control"
@@ -51,7 +51,7 @@ const Signup = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Password</label>
+                        <label className=" Name">Password</label>
                         <input
                             type="password"
                             className="form-control"

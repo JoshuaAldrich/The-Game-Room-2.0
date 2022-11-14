@@ -30,10 +30,10 @@ const Login = () => {
     return (
         <div className="flex-row justify-center mt-4">
             <div className="col-12 border rounded p-3">
-                <h3>Login </h3>
+                <h3 className="login">Login </h3>
                 <form onSubmit={handleFormSubmit}>
                     <div className="form-group ">
-                        <label >Name</label>
+                        <label className="Name">Name</label>
                         <input
                             type="test"
                             className="form-control"
@@ -43,7 +43,7 @@ const Login = () => {
 
                     </div>
                     <div className="form-group">
-                        <label>Password</label>
+                        <label className="PWD">Password</label>
                         <input
                             type="password"
                             className="form-control"
@@ -52,7 +52,7 @@ const Login = () => {
 
                     <button type="submit" className="btn btn-primary mt-3">Submit</button>
                 </form>
-                {error && <div><h1>Login failed</h1></div>}
+                {error && <div><h1 className="logfail">Login failed</h1></div>}
             </div>
 
         </div>

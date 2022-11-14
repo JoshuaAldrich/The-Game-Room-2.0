@@ -6,17 +6,17 @@ import auth from "../Utils/auth";
 const Nav = ({ user }) => {
   return (
 
-    <header className="bg-dark text-white py-2 flex-row align-center ">
+    <header className="header  text-white py-2 flex-row align-center ">
       <div className=" container d-flex justify-content-around ">
         <Link to="/">
-          <h1>Game Room</h1>
+          <h1 className="navGR text-decoration-none">Game Room</h1>
         </Link>
         <div className="d-flex justify-content-center align-items-center px-2">
           {auth.loggedIn() ? (
             <>
 
               <ul>
-                <p> You are logged in!</p>
+                <p className=" font color-white"> You are logged in!</p>
 
                 <Link to="/HoL"
                   className="px-2">High Or Low

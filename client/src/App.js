@@ -4,19 +4,11 @@ import { Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-
-
-
-
-
-
-
-
 import HoT from "./components/headsOrTails";
 import HoL from './pages/HoL';
 import RPS from "./components/rockPaperScissors";
 import Home from "./pages/Home";
-import Login from "./pages/Login"
+import Login from "./pages/login"
 import Nav from "./components/Nav";
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
