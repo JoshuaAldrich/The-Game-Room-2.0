@@ -33,7 +33,7 @@ const Login = () => {
                 <h3 className="login">Login </h3>
                 <form onSubmit={handleFormSubmit}>
                     <div className="form-group ">
-                        <label className="Name">Name</label>
+                        <label className="Name ">Name</label>
                         <input
                             type="test"
                             className="form-control"
