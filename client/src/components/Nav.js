@@ -33,10 +33,10 @@ const Nav = ({ user }) => {
 
             <ul>
               <Link to="/login"
-                className="px-2">Login
+                className="navLogin px-2">Login
               </Link>
               <Link to="/signup"
-                className="px-2">Sign Up
+                className="navSignup px-2">Sign Up
               </Link>
 
             </ul>

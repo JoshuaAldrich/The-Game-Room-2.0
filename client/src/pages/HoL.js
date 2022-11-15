@@ -46,13 +46,13 @@ const HoL = () => {
     <div className="flex-row mt-5">
       <div className="col-12 text-center">
 
-        <h2>Pick whether the next number will be high or low.</h2>
-        <p>{randomNumber}</p>
-        <button onClick={checkHigh}>High</button>
-        <p>Or</p>
+        <h2 className="h2 color-white">Pick whether the next number will be high or low.</h2>
+        <p className="number">{randomNumber}</p>
+        <button className="HL" onClick={checkHigh}>High</button>
+        <p className="h2">Or</p>
 
-        <button onClick={checkLow}>Low</button>
-        <p>{result}</p>
+        <button className="HL" onClick={checkLow}>Low</button>
+        <p className="number">{result}</p>
       </div>
     </div>
   );

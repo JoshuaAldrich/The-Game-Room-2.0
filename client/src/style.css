@@ -10,11 +10,13 @@ body{
     black 100%);
 }
 .welcome{
-    color:rgba(5, 5, 255, 0.815)
+    color:rgba(5, 5, 255, 0.815);
+    text-decoration: none;
 }
 .login{
     color: white;
     border-color: white;
+    text-decoration: none;
 }
 .Name {
     color:white;
@@ -46,6 +48,7 @@ text-decoration: none;
 /* home page */
 .welcome{
     color:white;
+    
 }
 .p{
     color:white;
@@ -69,10 +72,57 @@ text-decoration: none;
 
 /* signup */
 .signup{
-    color: rgba(244, 87, 87, 0.804);
+    color: rgb(0, 128, 255);
     border-color: white;
 }
 .logfail{
     color:red;
     font-weight: 800;
+}
+.navLogin{
+    font-size: larger;
+    font-weight: 700;
+    text-decoration: none;
+}
+.navLogin:hover{
+    font-size: larger;
+    font-weight: 700;
+    color: white;
+}
+.navSignup{
+    font-size: larger;
+    font-weight: 700;
+    text-decoration: none;
+}
+.navSignup:hover{
+    font-size: larger;
+    font-weight: 700;
+    color: white;
+}
+/*HoT */
+.heads{
+    color: white;
+}
+
+/*HoL */
+.h2{
+    color: rgba(255, 255, 255, 0.718);
+
+}
+.HL{
+    background-color: black;
+    color: white;
+    border-radius:20%;
+    font-weight: 700;
+}
+.HL:hover{
+    background-color: white;
+    color: black;
+    border-radius:20%;
+    font-weight: 700;
+}
+.number{
+color: red;
+background-color: rgba(0, 0, 0, 0.568);
+font-weight: 800;
 }

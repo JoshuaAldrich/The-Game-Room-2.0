@@ -54,7 +54,7 @@ const HoT = () => {
 
   return (
     <div>
-      <h2>Heads or Tails</h2>
+      <h2 className="heads">Heads or Tails</h2>
       {/* <img
         id="imageContainer"
         src={headImg}
