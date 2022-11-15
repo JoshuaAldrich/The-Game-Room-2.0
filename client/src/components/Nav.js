@@ -38,6 +38,15 @@ const Nav = ({ user }) => {
               <Link to="/signup"
                 className="navSignup px-2">Sign Up
               </Link>
+              <Link to="/RPS"
+                className="navSignup px-2">RPS
+              </Link>
+              <Link to="/HoL"
+                className="navSignup px-2">HoL
+              </Link>
+              <Link to="/HoT"
+                className="navSignup px-2">HoT
+              </Link>
 
             </ul>
           )}
