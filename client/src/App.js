@@ -1,34 +1,66 @@
-import HoT from "./components/headsOrTails";
-import HoL from "./components/highOrLow";
-import Auth from "./components/Auth";
-import RPS from "./components/rockPaperScissors";
-import Home from "./components/Home";
-import Nav from "./components/Nav";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+
+
+
+
+
+
+
+
+import HoT from "./components/headsOrTails";
+import HoL from './pages/HoL';
+import RPS from "./components/rockPaperScissors";
+import Home from "./pages/Home";
+import Login from "./pages/Login"
+import Nav from "./components/Nav";
+// import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Signup from "./pages/Signup";
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `${token}` : '',
+    }
+  }
+})
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
+})
 
 const App = () => {
-  let [user, setUser] = useState(null);
 
   return (
-    <>
-      <Nav user={user} />
+    <ApolloProvider client={client}>
 
-      <div className="pageContainer">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth setUser={setUser} />} />
-          <Route path="/RPS" element={<RPS />} />
-          <Route path="/HoL" element={<HoL />} />
-          <Route path="/HoT" element={<HoT />} />
-        </Routes>
-      </div>
-      <article id="contact" class="contact-me">
-        <div>
-          <h2>The Game Room</h2>
+      <div className="flex-column justify-flex-start min-100-vh">
+        <Nav />
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/RPS" element={<RPS />} />
+            <Route path="/HoL" element={<HoL />} />
+            <Route path="/HoT" element={<HoT />} />
+          </Routes>
         </div>
-      </article>
-    </>
+      </div>
+
+    </ApolloProvider>
   );
 };
 
