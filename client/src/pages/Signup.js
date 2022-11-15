@@ -30,7 +30,7 @@ const Signup = () => {
     return (
         <div className="flex-row justify-center mt-4">
             <div className="col-12 border rounded p-3">
-                <h3 className="signup">Sign Up </h3>
+                <h3 className="heads">Sign Up </h3>
                 <form onSubmit={handleFormSubmit}>
                     <div className="form-group ">
                         <label className="Name">Name</label>
