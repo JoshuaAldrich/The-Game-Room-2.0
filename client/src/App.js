@@ -46,7 +46,7 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
 
-      <div className="flex-column justify-flex-start min-100-vh">
+      <div className="container-fluid min-100-vh">
         <Nav />
         <div className="container">
           <Routes>
