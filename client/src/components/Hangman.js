@@ -129,3 +129,9 @@ var showClue = document.getElementById("clue");
     context.arc(60, 25, 10, 0, Math.PI * 2, true);
     context.stroke();
   };
+
+  draw = function ($pathFromx, $pathFromy, $pathTox, $pathToy) {
+    context.moveTo($pathFromx, $pathFromy);
+    context.lineTo($pathTox, $pathToy);
+    context.stroke();
+  };
