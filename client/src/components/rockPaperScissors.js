@@ -11,9 +11,9 @@ const RPS = () => {
       <h2 className="h2">
         Winner: <span></span>
       </h2>
-      <button>Rock</button>
-      <button>Paper</button>
-      <button>Scissors</button>
+      <button className="btn1">Rock</button>
+      <button className="btn2">Paper</button>
+      <button className="btn3">Scissors</button>
       <p></p>
     </div>
   );
