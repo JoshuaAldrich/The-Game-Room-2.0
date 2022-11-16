@@ -44,4 +44,18 @@ var showCatagory = document.getElementById("scatagory");
 var getHint = document.getElementById("hint");
 var showClue = document.getElementById("clue");
 
+ // create alphabet ul
+ var buttons = function () {
+    myButtons = document.getElementById("buttons");
+    letters = document.createElement("ul");
 
+    for (var i = 0; i < alphabet.length; i++) {
+      letters.id = "alphabet";
+      list = document.createElement("li");
+      list.id = "letter";
+      list.innerHTML = alphabet[i];
+      check();
+      myButtons.appendChild(letters);
+      letters.appendChild(list);
+    }
+  };
