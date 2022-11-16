@@ -121,3 +121,11 @@ var showClue = document.getElementById("clue");
     context.strokeStyle = "#fff";
     context.lineWidth = 2;
   };
+
+  head = function () {
+    myStickman = document.getElementById("stickman");
+    context = myStickman.getContext("2d");
+    context.beginPath();
+    context.arc(60, 25, 10, 0, Math.PI * 2, true);
+    context.stroke();
+  };
