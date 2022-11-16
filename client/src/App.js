@@ -15,6 +15,8 @@ import RPS from "./components/rockPaperScissors";
 import Home from "./pages/Home";
 import Login from "./pages/login";
 import Nav from "./components/Nav";
+import Dice from "./components/Dice";
+import Hangman from "./components/Hangman";
 // import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Signup from "./pages/Signup";
@@ -51,6 +53,8 @@ const App = () => {
             <Route path="/RPS" element={<RPS />} />
             <Route path="/HoL" element={<HoL />} />
             <Route path="/HoT" element={<HoT />} />
+            <Route path="/Hangman" element={<Hangman />} />
+            <Route path="/Dice" element={<Dice />} />
           </Routes>
         </div>
       </div>
