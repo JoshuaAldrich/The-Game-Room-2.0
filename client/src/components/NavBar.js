@@ -1,27 +1,24 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap';
-import Logo from "../images/Logo.png";
+
 
   const  NavBar = () => {
-
-    let [user, setUser] = useState(null)
-
     return (
 
-        <Navbar bg="warning shadow-lg p-3  rounded border border-danger border border-2" expand="xl">
+        <Navbar bg="Danger bg-danger shadow-lg p-3 rounded border border-light border border-2 text-white" expand="xl">
           <Container> 
-            <Navbar.Brand href="#home">Game Room</Navbar.Brand>
+            <Navbar.Brand href="/">Game Room</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="shadow-lg px-4  mb-2 rounded bg-secondary border border-danger">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Login</Nav.Link>
-                <Navbar.Text>User: <a href="#login">Jio</a></Navbar.Text>
+              <Nav className="shadow-lg px-4  mb-2 rounded bg-body border border-dark">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
+                <Navbar.Text>User: <a href="/login">Jio</a></Navbar.Text>
 
                 <NavDropdown title="Games" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Rock Paper Scissors</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Heads or Tails</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">High or Low</NavDropdown.Item>
+                  <NavDropdown.Item href="/RPS">Rock Paper Scissors</NavDropdown.Item>
+                  <NavDropdown.Item href="/HoT">Heads or Tails</NavDropdown.Item>
+                  <NavDropdown.Item href="/HoL">High or Low</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
@@ -34,4 +31,3 @@ import Logo from "../images/Logo.png";
     
 
 export default NavBar;
-

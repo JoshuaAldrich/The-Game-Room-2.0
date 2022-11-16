@@ -1,71 +1,71 @@
 import React, { useState } from "react";
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from "../Utils/mutations";
+import { ADD_USER } from "../Utils/mutations";
 import Auth from "../Utils/auth";
 
-const Login = () => {
-    const [formState, setFormState] = useState({ name: '', password: '' });
-    const [login, { error }] = useMutation(LOGIN_USER);
+const Signup = () => {
+    const [formState, setFormState] = useState({ name: '', email: '', password: '' });
+    const [addUser, { error }] = useMutation(ADD_USER)
 
-    // update state based on form input changes
     const handleChange = (event) => {
         const { name, value } = event.target;
-
         setFormState({
             ...formState,
             [name]: value,
-        });
-        console.log(formState);
-    };
+        })
+
+    }
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(event);
         try {
-            const { data } = await login({
+            const { data } = await addUser({
                 variables: { ...formState }
             });
             console.log(data);
-            Auth.login(data.login.token);
+            // Auth.login(data.addUser.token);
         } catch (e) {
             console.error(e);
         }
     }
     return (
-        <div className="mt-4">
-            <div className="col-12 bg-dark text-danger border border-4 border border warning rounded p-3 border border-danger">
-                <h3>Login </h3>
+        <div className="flex-row justify-center mt-4">
+            <div className="col-12 border rounded p-3">
+                <h3>Sign Up </h3>
                 <form onSubmit={handleFormSubmit}>
                     <div className="form-group ">
                         <label >Name</label>
                         <input
-                            name="name"
                             type="test"
                             className="form-control"
-                            placeholder="name"
+                            placeholder="Name"
                             onChange={handleChange}
                         />
-
+                    </div>
+                    <div className="form-group ">
+                        <label >Email</label>
+                        <input
+                            type="test"
+                            className="form-control"
+                            placeholder="Name"
+                            onChange={handleChange}
+                        />
                     </div>
                     <div className="form-group">
                         <label>Password</label>
                         <input
                             type="password"
-                            name="password"
                             className="form-control"
-                            value={formState.password}
-                            placeholder="password"
-                            onChange={handleChange}
-                        />
+                            placeholder="Password" />
                     </div>
 
-                    <button type="submit" className="btn btn-danger  mt-3">Submit</button>
+                    <button type="submit" className="btn btn-primary mt-3">Submit</button>
                 </form>
-                {error && <div>Login failed</div>}
+                {error && <div>Sign up failed</div>}
             </div>
 
         </div>
     )
 }
 
-export default Login;
+export default Signup;
