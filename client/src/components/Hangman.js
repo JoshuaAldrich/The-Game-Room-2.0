@@ -207,3 +207,19 @@ var showClue = document.getElementById("clue");
       }
     };
   };
+
+  // Play
+  play = function () {
+    categories = [
+      [
+        "Orlando",
+        "Miami",
+        "Chicago",
+        "Boston",
+        "Houston",
+        "San Francisco",
+        "New York"
+      ],
+      ["Avengers", "Step Brother", "Troy", "Creed", "jaws"],
+      ["Nike", "Adidas", "Puma", "Versace", "GAP"]
+    ];
