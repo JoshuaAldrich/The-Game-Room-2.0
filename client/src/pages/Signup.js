@@ -28,8 +28,8 @@ const Signup = () => {
         // }
     }
     return (
-        <div className="flex-row justify-center mt-4">
-            <div className="col-12 border rounded p-3">
+        <div className="flex-row justify-center border-4 p-1 mt-4">
+            <div className="col-6 border rounded p-4">
                 <h3 className="heads">Sign Up </h3>
                 <form onSubmit={handleFormSubmit}>
                     <div className="form-group ">
