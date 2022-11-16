@@ -28,7 +28,7 @@ const Home = () => {
                   In this game you can choose heads or tails and test your luck!
                 </Card.Text>
                 <Button variant="light">
-                  <Link to="/HoT"> View Game </Link>
+                  <Link className="VG" to="/HoT"> View Game </Link>
                 </Button>
               </Card.Body>
             </Card>
