@@ -37,3 +37,11 @@ var geusses = []; // Stored geusses
 var lives; // Lives
 var counter; // Count correct geusses
 var space; // Number of spaces in word '-'
+
+// Get elements
+var showLives = document.getElementById("mylives");
+var showCatagory = document.getElementById("scatagory");
+var getHint = document.getElementById("hint");
+var showClue = document.getElementById("clue");
+
+
