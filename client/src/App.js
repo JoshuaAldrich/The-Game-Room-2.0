@@ -1,51 +1,46 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
-
-
-
-
-
-
-
-
-import HoT from "./components/headsOrTails";
-import HoL from './pages/HoL';
+import HoT from "./components/HoT";
+import HoL from "./pages/HoL";
 import RPS from "./components/rockPaperScissors";
 import Home from "./pages/Home";
-import Login from "./pages/Login"
+import Login from "./pages/login";
 import Nav from "./components/Nav";
 // import { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Signup from "./pages/Signup";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `${token}` : '',
-    }
-  }
-})
+      authorization: token ? `${token}` : "",
+    },
+  };
+});
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
-})
+  cache: new InMemoryCache(),
+});
 
 const App = () => {
-
   return (
     <ApolloProvider client={client}>
-
       <div className="container-fluid min-100-vh">
         <Nav />
         <div className="container">
@@ -59,7 +54,6 @@ const App = () => {
           </Routes>
         </div>
       </div>
-
     </ApolloProvider>
   );
 };

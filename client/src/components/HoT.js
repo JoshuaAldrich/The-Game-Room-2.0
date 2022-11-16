@@ -1,7 +1,7 @@
-// import headImg from "../images/heads.png";
-// import tailsImg from "../images/tails.png";
-// import classes from "../styles/headsOrTails.module.css";
-// import React, { useState } from "react";
+import headsImg from "../images/heads.png";
+import tailsImg from "../images/tails.png";
+import classes from "../styles/HoT.module.css";
+import React, { useState } from "react";
 
 const HoT = () => {
   const [result, setResult] = useState("");
