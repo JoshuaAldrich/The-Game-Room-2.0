@@ -41,7 +41,7 @@ const Home = () => {
                   In this game mode you can challenge the computer to a classic.
                 </Card.Text>
                 <Button variant="light">
-                  <Link to="/RPS"> View Game </Link>
+                  <Link className="VG" to="/RPS"> View Game </Link>
                 </Button>
               </Card.Body>
             </Card>
@@ -55,7 +55,7 @@ const Home = () => {
                   higher or lower.
                 </Card.Text>
                 <Button variant="light">
-                  <Link to="/HoL"> View Game </Link>
+                  <Link className="VG" to="/HoL"> View Game </Link>
                 </Button>
               </Card.Body>
             </Card>
@@ -68,7 +68,7 @@ const Home = () => {
                   A classic from grade school guess the word correctly or lose.
                 </Card.Text>
                 <Button variant="light">
-                  <Link to="/HoT"> View Game </Link>
+                  <Link className="VG" to="/HoT"> View Game </Link>
                 </Button>
               </Card.Body>
             </Card>
@@ -82,7 +82,7 @@ const Home = () => {
                   rolls higher.
                 </Card.Text>
                 <Button variant="light">
-                  <Link to="/HoT"> View Game </Link>
+                  <Link className="VG" to="/HoT"> View Game </Link>
                 </Button>
               </Card.Body>
             </Card>
