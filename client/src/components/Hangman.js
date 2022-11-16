@@ -60,4 +60,14 @@ var showClue = document.getElementById("clue");
     }
   };
 
-  
+  // Select Catagory
+  var selectCat = function () {
+    if (chosenCategory === categories[0]) {
+      catagoryName.innerHTML =
+        "The Chosen Category Is Clothing Brands";
+    } else if (chosenCategory === categories[1]) {
+      catagoryName.innerHTML = "The Chosen Category Is Films";
+    } else if (chosenCategory === categories[2]) {
+      catagoryName.innerHTML = "The Chosen Category Is Cities";
+    }
+  };
