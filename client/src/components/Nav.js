@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import auth from "../Utils/auth";
 
 
-const Nav = ({ user }) => {
+const Nav = () => {
   return (
 
     <header className="bg-dark text-white py-2 flex-row align-center ">
@@ -43,5 +43,4 @@ const Nav = ({ user }) => {
     </header>
   )
 };
-
 export default Nav;
