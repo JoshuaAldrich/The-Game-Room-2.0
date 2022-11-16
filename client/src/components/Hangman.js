@@ -106,3 +106,9 @@ var showClue = document.getElementById("clue");
       }
     }
   };
+
+   // Animate man
+   var animate = function () {
+    var drawMe = lives;
+    drawArray[drawMe]();
+  };
