@@ -220,8 +220,20 @@ var showClue = document.getElementById("clue");
         "San Francisco",
         "New York"
       ],
-      ["Avengers", "Step Brother", "Troy", "Creed", "jaws"],
-      ["Nike", "Adidas", "Puma", "Versace", "GAP"]
+      [
+        "Avengers", 
+      "Step Brother", 
+      "Troy", 
+      "Creed", 
+      "jaws"
+    ],
+      [
+        "Nike", 
+      "Adidas", 
+      "Puma", 
+      "Versace", 
+      "GAP"
+    ]
     ];
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
@@ -240,3 +252,37 @@ var showClue = document.getElementById("clue");
   };
 
   play();
+
+  // Hint
+
+  hint.onclick = function () {
+    hints = [
+      [
+        "Central Florida",
+        "South Florida",
+        "Silver Bean",
+        "Famous Baseball Team",
+        "Texas",
+        "Rains Alot",
+        "Concrete Jungle"
+      ],
+      [
+        "Super Hero",
+        "Comedy about brothers",
+        "Historical action",
+        "Boxing",
+        "Giant great white shark"
+      ],
+      [
+        "Used by everyone",
+        "Commonly known in soccer",
+        "Animal",
+        "Expensive",
+        "|     |"
+      ]
+    ];
+
+    var catagoryIndex = categories.indexOf(chosenCategory);
+    var hintIndex = chosenCategory.indexOf(word);
+    showClue.innerHTML = "Clue: - " + hints[catagoryIndex][hintIndex];
+  };
