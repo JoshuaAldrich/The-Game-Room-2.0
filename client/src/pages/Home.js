@@ -39,7 +39,9 @@ const Home = () => {
                 <Card.Text>
                   In this game mode you can challenge the computer to a classic.
                 </Card.Text>
-                {/* <Button variant="primary">View</Button> */}
+                <Button variant="primary">
+                  <Link to="/RPS"> View Game </Link>
+                </Button>
               </Card.Body>
             </Card>
             <Card style={{ width: "18rem" }}>
@@ -50,7 +52,9 @@ const Home = () => {
                   Given a beginning number decide wether the next number will be
                   higher or lower.
                 </Card.Text>
-                {/* <Button variant="primary">View</Button> */}
+                <Button variant="primary">
+                  <Link to="/HoL"> View Game </Link>
+                </Button>
               </Card.Body>
             </Card>
             <Card style={{ width: "18rem" }}>
@@ -60,7 +64,9 @@ const Home = () => {
                 <Card.Text>
                   A classic from grade school guess the word correctly or lose.
                 </Card.Text>
-                {/* <Button variant="primary">View</Button> */}
+                <Button variant="primary">
+                  <Link to="/HoT"> View Game </Link>
+                </Button>
               </Card.Body>
             </Card>
             <Card style={{ width: "18rem" }}>
@@ -71,7 +77,9 @@ const Home = () => {
                   Test your luck in dice playing against a computer to see who
                   rolls higher.
                 </Card.Text>
-                {/* <Button variant="primary">View</Button> */}
+                <Button variant="primary">
+                  <Link to="/HoT"> View Game </Link>
+                </Button>
               </Card.Body>
             </Card>
           </div>
