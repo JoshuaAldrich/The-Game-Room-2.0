@@ -223,3 +223,20 @@ var showClue = document.getElementById("clue");
       ["Avengers", "Step Brother", "Troy", "Creed", "jaws"],
       ["Nike", "Adidas", "Puma", "Versace", "GAP"]
     ];
+    chosenCategory = categories[Math.floor(Math.random() * categories.length)];
+    word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
+    word = word.replace(/\s/g, "-");
+    console.log(word);
+    buttons();
+
+    geusses = [];
+    lives = 10;
+    counter = 0;
+    space = 0;
+    result();
+    comments();
+    selectCat();
+    canvas();
+  };
+
+  play();
