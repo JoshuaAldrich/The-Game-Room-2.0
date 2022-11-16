@@ -1,31 +1,34 @@
+import { Routes, Route} from "react-router-dom";
 import HoT from "./components/headsOrTails";
 import HoL from './pages/HoL';
-// import Auth from "./components/Auth";
 import RPS from "./components/rockPaperScissors";
 import Home from "./pages/Home";
-import Login from "./pages/login";
-import Game from "./components/Game";
+import Login from "./pages/Login"
 import NavBar from "./components/NavBar";
-import Nav from "./components/Nav";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+// import Footer from "./components/Footer";
+// import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Signup from "./pages/Signup";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function App() {
+
+const App=() =>{
   return (
-    <div>
-    <Nav />
+    <div className="flex-column justify-flex-start min-100-vh">
     <NavBar />
-    <Home />
-    <Login />
-    <RPS />
-    <Game />
-    <Nav />
-    <HoL />
-    <HoT />
-    
+    <div className="container">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/RPS" element={<RPS />} />
+        <Route path="/HoL" element={<HoL />} />
+        <Route path="/HoT" element={<HoT />} />
+      </Routes>
     </div>
+  </div>
+
   );
 }
 

@@ -10,7 +10,7 @@ const Login = () => {
         event.prevenDefault();
     }
     return (
-        <div className="flex-row justify-center mt-4">
+        <div className="flex justify-center mt-4">
             <div className="col-12">
                 <form onSubmit={handleFormSubmit}>
                     <div className="form-group">

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Col, Row  } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import RPS from "../images/RPS.jpg";
 import highorlow from "../images/highorlow.jpg";
 import HoT from "../images/HoT.jpg";
@@ -12,44 +12,51 @@ import questionmark from "../images/questionmark.png";
 
 export const Game = () => {
   return (
-    <section className="games" id="games">
-        <Container>
-            <Row>
-                <Col>
-                <div className="games-box">
-                    <h2>
-                        Games
-                    </h2>
-                    <p> jjbdbfhdfbhshbfhbBEfbwe </p>
-                    <div className='item'>
-                        <img src={RPS} alt="Images" />
-                        <h3>Rock Paper Scissors</h3>
-                    </div>
-                    <div className='item'>
-                        <img src={highorlow} alt="Images" />
-                        <h3>High Or Low</h3>
-                    </div>
-                    <div className='item'>
-                        <img src={HoT} alt="Images" />
-                        <h3>Heads or Tails</h3>
-                    </div>
-                    <div className='item'>
-                        <img src={Logo} alt="Images" />
-                        <h3>snap</h3>
-                    </div>
-                    <div className='item'>
-                        <img src={spades} alt="Images" />
-                        <h3>crackle</h3>
-                    </div>
-                    <div className='item'>
-                        <img src={questionmark} alt="Images" />
-                        <h3>POP</h3>
+  <section className="games" id="games">
+    <Container>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="RPS" class="card-img-top" alt="../images"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
-               </Col>
-            </Row>
-        </Container>
-    </section>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
   )
 }
 export default Game;
