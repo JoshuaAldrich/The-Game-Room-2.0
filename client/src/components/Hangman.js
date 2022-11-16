@@ -171,3 +171,16 @@ var showClue = document.getElementById("clue");
   leftLeg = function () {
     draw(60, 70, 20, 100);
   };
+
+  drawArray = [
+    rightLeg,
+    leftLeg,
+    rightArm,
+    leftArm,
+    torso,
+    head,
+    frame4,
+    frame3,
+    frame2,
+    frame1
+  ];
