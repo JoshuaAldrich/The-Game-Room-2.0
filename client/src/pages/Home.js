@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import headsImg from "../images/coin.svg";
 import RPSImg from "../images/Rock.png";
-import HoLImg from "../images/HoLimg.jpg";
+import HoLImg from "../images/HoLImg.jpg";
 import hangmanImg from "../images/hangman.png";
 import diceImg from "../images/diceImage.jpg";
 import { Link } from "react-router-dom";
