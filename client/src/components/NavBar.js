@@ -5,12 +5,12 @@ import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap';
   const  NavBar = () => {
     return (
 
-        <Navbar bg="Danger bg-danger shadow-lg p-3 rounded border border-light border border-2 text-white" expand="xl">
+        <Navbar bg="Danger bg-danger shadow-lg p-2 rounded border border-light border border-2 " expand="xl">
           <Container> 
             <Navbar.Brand href="/">Game Room</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="shadow-lg px-4  mb-2 rounded bg-body border border-dark">
+              <Nav className="shadow-lg p-2  m-2 rounded bg-body border border-dark">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
                 <Navbar.Text>User: <a href="/login">Jio</a></Navbar.Text>

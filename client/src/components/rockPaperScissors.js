@@ -2,7 +2,7 @@ import React from 'react';
 
 const RPS = () => {
   return (
-  <div>
+  <div className='m-5 p-5 bg-white text-center border border-danger border border-3 rounded'>
     <h2>Rock Paper Scissors</h2>
     <h2>
       Your Choice: <span></span>
@@ -20,4 +20,4 @@ const RPS = () => {
    </div>
   )
 }
- export default RPS
+ export default RPS;
