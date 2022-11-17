@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap';
+import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap'
+
 
 
   const  NavBar = () => {
@@ -19,8 +20,6 @@ import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap';
                   <NavDropdown.Item href="/RPS">Rock Paper Scissors</NavDropdown.Item>
                   <NavDropdown.Item href="/HoT">Heads or Tails</NavDropdown.Item>
                   <NavDropdown.Item href="/HoL">High or Low</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
