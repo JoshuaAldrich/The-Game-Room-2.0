@@ -1,7 +1,7 @@
 import React from "react"
 
 const Footer = () => 
-<div className="page-footer font-small blue p-3">
+<div className="footer page-footer font-small blue p-3">
             <div className="bg-dark border border-light rounded text-center text-light border border-3">
                 <div className="text-light bg-danger text-center p-2 m-2 border border-light rounded  border border-2">Created by:</div>
                 <p>Los Afortuandos</p>
