@@ -5,6 +5,12 @@
     border-radius: 15px;
     border-color: white;
     background-color: rgb(39, 36, 36);
+    border-width: 3px;
+}
+
+.VG {
+    text-decoration: underline;
+    display: inline-block
 }
 .VG{
     text-decoration: none;
