@@ -1,4 +1,11 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
+.card {
+    padding: 10px;
+    margin: 15px;
+    justify-content: center;
+    border-radius: 15px;
+    border-color: white;
+    background-color: rgb(39, 36, 36);
+}
+.VG{
+    text-decoration: none;
 }

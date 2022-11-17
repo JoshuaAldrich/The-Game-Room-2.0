@@ -11,7 +11,6 @@ import { setContext } from '@apollo/client/link/context';
 
 
 
-
 import HoT from "./components/headsOrTails";
 import HoL from './pages/HoL';
 import RPS from "./components/rockPaperScissors";
