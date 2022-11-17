@@ -1,63 +1,67 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
 
-import HoT from "./components/HoT";
-import HoL from "./pages/HoL";
+
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+
+
+
+
+
+
+
+import NavBar from "./components/NavBar"
+import HoT from "./components/headsOrTails";
+import HoL from './pages/HoL';
 import RPS from "./components/rockPaperScissors";
 import Home from "./pages/Home";
-import Login from "./pages/login";
-import Nav from "./components/Nav";
-import Dice from "./components/Dice";
-import Hangman from "./components/Hangman";
+import Login from "./pages/Login"
+import Footer from "./components/Footer"
+// import Nav from "./components/Nav";
 // import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from "./pages/Signup";
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("id_token");
+  const token = localStorage.getItem('id_token');
   return {
     headers: {
       ...headers,
-      authorization: token ? `${token}` : "",
-    },
-  };
-});
+      authorization: token ? `${token}` : '',
+    }
+  }
+})
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
+  cache: new InMemoryCache()
+})
 
 const App = () => {
+
   return (
     <ApolloProvider client={client}>
-      <div className="container-fluid min-100-vh">
-        <Nav />
-        <div className="container">
+
+      <div className="flex-column justify-flex-start min-100-vh bg-dark">
+        <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/Login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/RPS" element={<RPS />} />
             <Route path="/HoL" element={<HoL />} />
             <Route path="/HoT" element={<HoT />} />
-            <Route path="/Hangman" element={<Hangman />} />
-            <Route path="/Dice" element={<Dice />} />
           </Routes>
+          <Footer />
         </div>
-      </div>
+
     </ApolloProvider>
   );
 };

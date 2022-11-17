@@ -14,75 +14,7 @@ const Home = () => {
       <div className="flex-row justify-space-between text-center pt-5">
         <div className="col-12">
           <h1 className="">Welcome to the Game room!</h1>
-          <p>
-            {" "}
-            We have a wide array of games for our users to enjoy! Check out the
-            games below.
-          </p>
-          <div className="row">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={headsImg} />
-              <Card.Body>
-                <Card.Title>Heads or Tails</Card.Title>
-                <Card.Text>
-                  In this game you can choose heads or tails and test your luck!
-                </Card.Text>
-                <Button variant="primary">
-                  <Link to="/HoT"> View Game </Link>
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={RPSImg} />
-              <Card.Body>
-                <Card.Title>Rock Paper Scissors</Card.Title>
-                <Card.Text>
-                  In this game mode you can challenge the computer to a classic.
-                </Card.Text>
-                <Button variant="primary">
-                  <Link to="/RPS"> View Game </Link>
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={HoLImg} />
-              <Card.Body>
-                <Card.Title>High or Low</Card.Title>
-                <Card.Text>
-                  Given a beginning number decide wether the next number will be
-                  higher or lower.
-                </Card.Text>
-                <Button variant="primary">
-                  <Link to="/HoL"> View Game </Link>
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={hangmanImg} />
-              <Card.Body>
-                <Card.Title>Hangman</Card.Title>
-                <Card.Text>
-                  A classic from grade school guess the word correctly or lose.
-                </Card.Text>
-                <Button variant="primary">
-                  <Link to="/HoT"> View Game </Link>
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={diceImg} />
-              <Card.Body>
-                <Card.Title>Dice</Card.Title>
-                <Card.Text>
-                  Test your luck in dice playing against a computer to see who
-                  rolls higher.
-                </Card.Text>
-                <Button variant="primary">
-                  <Link to="/HoT"> View Game </Link>
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
+          <p> lorem ismpdp asa dsa dsad ksad klasn dsandaslnd laslndas</p>
         </div>
       </div>
     </main>

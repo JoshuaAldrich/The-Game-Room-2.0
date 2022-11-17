@@ -43,6 +43,7 @@ const HoL = () => {
   }
 
   return (
+  <div className='m-5 p-5 bg-white text-center border border-danger border border-3 rounded'>
     <div className="flex-row mt-5">
       <div className="col-12 text-center">
 
@@ -55,6 +56,7 @@ const HoL = () => {
         <p>{result}</p>
       </div>
     </div>
+   </div>
   );
 };
 

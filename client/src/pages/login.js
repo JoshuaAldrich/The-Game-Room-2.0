@@ -31,42 +31,41 @@ const Login = () => {
       console.error(e);
       console.log(error);
     }
-  };
-  return (
-    <div className="flex-row justify-center mt-4">
-      <div className="col-12 border rounded p-3">
-        <h3>Login </h3>
-        <form onSubmit={handleFormSubmit}>
-          <div className="form-group ">
-            <label>Name</label>
-            <input
-              name="name"
-              type="test"
-              className="form-control"
-              placeholder="User Name"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              className="form-control"
-              value={formState.password}
-              placeholder="Password"
-              onChange={handleChange}
-            />
-          </div>
+    return (
+        <div className="mt-4">
+            <div className="col-12 bg-dark text-danger border border-4 border border warning rounded p-3 border border-danger">
+                <h3>Login </h3>
+                <form onSubmit={handleFormSubmit}>
+                    <div className="form-group ">
+                        <label >Name</label>
+                        <input
+                            name="name"
+                            type="test"
+                            className="form-control"
+                            placeholder="name"
+                            onChange={handleChange}
+                        />
 
-          <button type="submit" className="btn btn-primary mt-3">
-            Submit
-          </button>
-        </form>
-        {error && <div>Login failed</div>}
-      </div>
-    </div>
-  );
-};
+                    </div>
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            className="form-control"
+                            value={formState.password}
+                            placeholder="password"
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <button type="submit" className="btn btn-danger m-3 ">Submit</button>
+                </form>
+                {error && <div>Login failed</div>}
+            </div>
+
+        </div>
+    )
+}
 
 export default Login;
