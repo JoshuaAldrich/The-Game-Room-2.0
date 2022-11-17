@@ -17,6 +17,7 @@ import HoL from './pages/HoL';
 import RPS from "./components/rockPaperScissors";
 import Home from "./pages/Home";
 import Login from "./pages/Login"
+import Footer from "./components/Footer"
 // import Nav from "./components/Nav";
 // import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -51,12 +52,13 @@ const App = () => {
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/Login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/RPS" element={<RPS />} />
             <Route path="/HoL" element={<HoL />} />
             <Route path="/HoT" element={<HoT />} />
           </Routes>
+          <Footer />
         </div>
       </div>
 

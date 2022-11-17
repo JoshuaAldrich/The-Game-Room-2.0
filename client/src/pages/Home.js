@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <main>
-      <div className=" mx-auto text-center pt-5 border bg-dark text-white border border-white border border-4 rounded ">
+      <div className=" m-4 text-center p-5 border bg-dark text-white border border-white border border-4 rounded ">
         <div className="col-12">
           <h1 className="">Welcome to the Game room!</h1>
           <p>
