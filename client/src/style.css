@@ -10,10 +10,12 @@
     text-decoration: none;
 
 }
+.VG2:hover{
+    color:black;
+}
 .VG2{
     text-decoration: none;
     margin-top: 135px;
-    background-color:black;
     color:white;
     text-decoration: none;
     font-size: 20px;
@@ -23,7 +25,6 @@
     border-radius:30px;
     transition: 1s;
     font-weight: 600;
-
 }
 *{
     padding:0;
@@ -144,7 +145,7 @@ text-decoration: none;
 
 /* home page */
 .welcome{
-    color:white;
+    color:black;
     
 }
 .p{
