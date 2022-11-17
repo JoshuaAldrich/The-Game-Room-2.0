@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+
+
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
@@ -48,8 +50,7 @@ const App = () => {
     <ApolloProvider client={client}>
 
       <div className="flex-column justify-flex-start min-100-vh bg-dark">
-        <NavBar /> 
-        <div className="container">
+        <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Login" element={<Login />} />
@@ -60,7 +61,6 @@ const App = () => {
           </Routes>
           <Footer />
         </div>
-      </div>
 
     </ApolloProvider>
   );
