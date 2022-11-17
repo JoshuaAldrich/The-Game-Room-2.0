@@ -14,6 +14,8 @@ const Signup = () => {
             [name]: value,
         })
 
+        console.log(formState);
+
     }
 
     const handleFormSubmit = async (event) => {
@@ -36,27 +38,32 @@ const Signup = () => {
                     <div className="form-group ">
                         <label >Name</label>
                         <input
+                            name="name"
                             type="test"
                             className="form-control"
-                            placeholder="Name"
+                            placeholder="name"
                             onChange={handleChange}
                         />
                     </div>
                     <div className="form-group ">
                         <label >Email</label>
                         <input
+                            name="email"
                             type="test"
                             className="form-control"
-                            placeholder="Name"
+                            placeholder="email"
                             onChange={handleChange}
                         />
                     </div>
                     <div className="form-group">
                         <label>Password</label>
                         <input
+                            name="password"
                             type="password"
                             className="form-control"
-                            placeholder="Password" />
+                            placeholder="Password"
+                            onChange={handleChange}
+                        />
                     </div>
 
                     <button type="submit" className="btn btn-primary mt-3">Submit</button>
