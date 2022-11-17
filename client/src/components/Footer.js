@@ -6,6 +6,6 @@ const Footer = () =>
                 <div className="text-light bg-danger text-center p-2 m-2 border border-light rounded  border border-2">Created by:</div>
                 <p>Los Afortuandos</p>
             </div>
-            <div className="footer-copyright text-center py-3 text-white">© 2022 Copyright:</div>
+            <div className=" copyright footer-copyright text-center py-3 text-white">© 2022 Copyright:</div>
 </div>
 export default Footer;

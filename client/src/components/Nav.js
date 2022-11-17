@@ -10,7 +10,7 @@ const Nav = ({ user }) => {
     <header className="bg-dark text-white py-2 flex-row align-center ">
       <div className=" container d-flex justify-content-around ">
         <Link to="/">
-          <h1>Game Room</h1>
+          <h1 className="GR">Game Room</h1>
         </Link>
         <div className="d-flex justify-content-center align-items-center px-2">
           {auth.loggedIn() ? (
