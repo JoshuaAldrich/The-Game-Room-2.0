@@ -26,9 +26,10 @@ const Signup = () => {
         variables: { ...formState },
       });
       console.log(data);
-      // Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
+      console.log(error);
     }
   };
   return (
@@ -39,6 +40,7 @@ const Signup = () => {
           <div className="form-group ">
             <label>Name</label>
             <input
+              name="name"
               type="test"
               className="form-control"
               placeholder="User Name"
@@ -49,6 +51,7 @@ const Signup = () => {
             <label>Email</label>
             <input
               type="test"
+              name="email"
               className="form-control"
               placeholder="Email"
               onChange={handleChange}
@@ -57,9 +60,11 @@ const Signup = () => {
           <div className="form-group">
             <label>Password</label>
             <input
+              name="password"
               type="password"
               className="form-control"
               placeholder="Password"
+              onChange={handleChange}
             />
           </div>
 
