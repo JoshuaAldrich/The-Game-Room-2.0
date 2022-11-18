@@ -26,7 +26,10 @@ const resolvers = {
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
+<<<<<<< .merge_file_a19864
             const token = signToken(user)
+=======
+>>>>>>> .merge_file_a18152
 
             return { token, user };
         },

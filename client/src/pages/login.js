@@ -32,8 +32,8 @@ const Login = () => {
         }
     }
     return (
-        <div className="mt-4">
-            <div className="col-12 bg-dark text-danger border border-4 border border warning rounded p-3 border border-danger">
+        <div className="flex-row justify-center mt-4">
+            <div className="col-12 border rounded p-3">
                 <h3>Login </h3>
                 <form onSubmit={handleFormSubmit}>
                     <div className="form-group ">
@@ -59,7 +59,7 @@ const Login = () => {
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-danger m-3 ">Submit</button>
+                    <button type="submit" className="btn btn-primary mt-3">Submit</button>
                 </form>
                 {error && <div>Login failed</div>}
             </div>

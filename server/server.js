@@ -28,7 +28,11 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('*', (req, res) => {
+<<<<<<< .merge_file_a17460
   res.sendFile(path.join(__dirname, '../client/public/index.html'));
+=======
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+>>>>>>> .merge_file_a00436
 });
 
 const startApolloServer = async (typeDefs, resolvers) => {

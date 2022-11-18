@@ -1,1 +1,9 @@
+<<<<<<< .merge_file_a16476
 node_modules
+=======
+node_modules/
+.vscode
+.DS_Store
+node_modules
+.env
+>>>>>>> .merge_file_a14332
