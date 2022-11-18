@@ -1,18 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-
-
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
-
-
-
-
-
-
-
 import NavBar from "./components/NavBar"
 import HoT from "./components/headsOrTails";
 import HoL from './pages/HoL';
@@ -50,10 +40,11 @@ const App = () => {
     <ApolloProvider client={client}>
 
       <div className="flex-column justify-flex-start min-100-vh bg-dark">
-        <NavBar />
+        <NavBar /> 
+        <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/Login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/RPS" element={<RPS />} />
             <Route path="/HoL" element={<HoL />} />
@@ -61,6 +52,7 @@ const App = () => {
           </Routes>
           <Footer />
         </div>
+      </div>
 
     </ApolloProvider>
   );

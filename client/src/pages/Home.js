@@ -13,8 +13,8 @@ const Home = () => {
     <main>
       <div className=" m-4 text-center p-5 border bg-dark text-white border border-white border border-4 rounded ">
         <div className="col-12">
-          <h1 className="">Welcome to the Game room!</h1>
-          <p>
+          <h1 className="text">Welcome to the Game room!</h1>
+          <p className="text">
             {" "}
             We have a wide array of games for our users to enjoy! Check out the
             games below.
@@ -24,7 +24,7 @@ const Home = () => {
               <Card.Img variant="top" src={headsImg} />
               <Card.Body>
                 <Card.Title>Heads or Tails</Card.Title>
-                <Card.Text>
+                <Card.Text className="text">
                   In this game you can choose heads or tails and test your luck!
                 </Card.Text>
                 <Button variant="light">
@@ -37,7 +37,7 @@ const Home = () => {
               <Card.Img variant="top" src={RPSImg} />
               <Card.Body>
                 <Card.Title>Rock Paper Scissors</Card.Title>
-                <Card.Text>
+                <Card.Text className="text"> 
                   In this game mode you can challenge the computer to a classic.
                 </Card.Text>
                 <Button variant="light">
@@ -49,13 +49,13 @@ const Home = () => {
             <Card style={{ width: "18rem" }}>
               <Card.Img variant="top" src={HoLImg} />
               <Card.Body>
-                <Card.Title>High or Low</Card.Title>
+                <Card.Title className="text">High or Low</Card.Title>
                 <Card.Text>
                   Given a beginning number decide wether the next number will be
                   higher or lower.
                 </Card.Text>
-                <Button variant="light">
-                  <Link className="VG" to="/HoL"> View Game </Link>
+                <Button className="VG2" variant="light">
+                  <Link className="VG2" to="/HoL"> View Game </Link>
                 </Button>
               </Card.Body>
             </Card>
@@ -64,7 +64,7 @@ const Home = () => {
               <Card.Img variant="top" src={hangmanImg} />
               <Card.Body>
                 <Card.Title>Hangman</Card.Title>
-                <Card.Text>
+                <Card.Text className="text">
                   A classic from grade school guess the word correctly or lose.
                 </Card.Text>
                 <Button variant="light">
@@ -77,7 +77,7 @@ const Home = () => {
               <Card.Img variant="top" src={diceImg} />
               <Card.Body>
                 <Card.Title>Dice</Card.Title>
-                <Card.Text>
+                <Card.Text className="text">
                   Test your luck in dice playing against a computer to see who
                   rolls higher.
                 </Card.Text>

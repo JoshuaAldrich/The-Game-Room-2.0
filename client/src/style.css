@@ -5,13 +5,302 @@
     border-radius: 15px;
     border-color: white;
     background-color: rgb(39, 36, 36);
-    border-width: 3px;
-}
-
-.VG {
-    text-decoration: underline;
-    display: inline-block
 }
 .VG{
     text-decoration: none;
+
+}
+.VG2:hover{
+    color:black;
+}
+.VG2{
+    text-decoration: none;
+    margin-top: 135px;
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+    border-color: red;
+    font-weight:bold;
+    padding: 13px 11px; 
+    border-radius:30px;
+    transition: 1s;
+    font-weight: 600;
+}
+*{
+    padding:0;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing:border-box;
+}
+.GR{
+      font-weight: 800;
+
+}
+body{
+    background:linear-gradient(to right,
+    rgb(247, 76, 76) 20%,
+    rgba(0, 0, 0, 0.838) 100%);
+}
+.welcome{
+    color:rgb(247, 76, 76);
+    text-decoration: none;
+}
+.login{
+    color: white;
+    border-color: white;
+    text-decoration: none;
+}
+.Name {
+    color:white;
+}
+.PWD{
+    color:white;
+}
+
+.btn{
+    background-color:black;
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+    border: 4px solid transparent;
+    border-color: rgb(247, 76, 76);
+    font-weight:bold;
+    padding: 13px 30px; 
+    border-radius:30px;
+    transition: .5s;
+    font-weight: 600;
+}
+
+.btn1{
+    background-color:grey;
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+    border: 4px solid transparent;
+    border-color: rgb(0, 0, 0);
+    font-weight:bold;
+    padding: 13px 30px; 
+    border-radius:30px;
+    transition: .5s;
+    font-weight: 600;
+    
+}
+
+.btn2{
+    background-color:wheat;
+    color:black;
+    text-decoration: none;
+    font-size: 20px;
+    border: 4px solid transparent;
+    border-color: rgb(0, 0, 0);
+    font-weight:bold;
+    padding: 13px 30px; 
+    border-radius:30px;
+    transition: .5s;
+    font-weight: 600;
+}
+
+.btn3{
+    background-color:green;
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+    border: 4px solid transparent;
+    border-color: rgb(0, 0, 0);
+    font-weight:bold;
+    padding: 13px 30px; 
+    border-radius:30px;
+    transition: .5s;
+    font-weight: 600;
+}
+
+.btn:hover{
+background-color: white;
+border:3px solid red;
+color:black;
+font-weight: 600;
+text-decoration: none;
+}
+.btn1:hover{
+background-color: white;
+border:3px solid grey;
+color:grey;
+font-weight: 600;
+text-decoration: none;
+}
+.btn2:hover{
+background-color: black;
+border:3px solid wheat;
+color:wheat;
+font-weight: 600;
+text-decoration: none;
+}
+.btn3:hover{
+background-color: rgb(0, 0, 0);
+border:3px solid green;
+color:green;
+font-weight: 600;
+text-decoration: none;
+}
+
+/* home page */
+.welcome{
+    color:black;
+    
+}
+.p{
+    color:white;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* NAV */
+.navGR{
+    color:white;
+    border-radius: 30px;
+    text-decoration: none;
+    text-underline-offset: none;
+    text-decoration-line: none;
+}
+.navGR:hover{
+    color:rgb(247, 76, 76);
+    transition: 1.5s;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+.VG{
+    color: white;
+}
+.VG:hover{
+    color:black;
+
+}
+/* signup */
+.signup{
+    color: rgb(0, 128, 255);
+    border-color: white;
+}
+.logfail{
+    color:red;
+    font-weight: 800;
+}
+.navLogin{
+    font-size: larger;
+    font-weight: 700;
+    text-decoration: none;
+}
+.navLogin:hover{
+    font-size: larger;
+    font-weight: 700;
+    color: white;
+}
+.navSignup{
+    font-size: larger;
+    font-weight: 700;
+    text-decoration: none;
+}
+.navSignup:hover{
+    font-size: larger;
+    font-weight: 700;
+    color: white;
+}
+/*HoT */
+.heads{
+    color: white;
+}
+
+/*HoL */
+.h2{
+    color: rgba(255, 255, 255, 0.865);
+
+}
+.HLT{
+    background-color: rgba(0, 0, 0, 0.804);
+    color: rgba(241, 38, 38, 0.817);
+    border-radius: 5px;
+    font-weight: 700;
+}
+.HLR{
+    margin-top: 20px;
+    background-color:rgba(0, 0, 0, 0.804);
+    color: rgb(88, 254, 88);
+    border-radius: 5px;
+    font-weight: 700;
+}
+.HL:hover{
+    background-color: white;
+    color: black;
+    border-radius:10%;
+    font-weight: 700;
+}
+.HLH{
+    background-color: rgb(8, 154, 168);
+    color: black;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.HLH:hover{
+    background-color: green;
+    color: black;
+    border-radius:10%;
+    font-weight: 700;
+}
+.HLL{
+    background-color: rgba(241, 38, 38, 0.817);
+    color: black;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 1px;
+}
+.HLL:hover{
+    background-color: green;
+    color: black;
+    border-radius:10%;
+    font-weight: 700;
+}
+.number{
+color: red;
+background-color: rgba(0, 0, 0, 0.568);
+font-weight: 800;
+}
+.h4{
+    font-size: 25px;
+    color: white;
+
+}
+.rock{
+color: grey;
+font-weight: 700;
+}
+.paper{
+color: rgb(248, 214, 152);
+font-weight: 700;
+}
+.scissors{
+color: green;
+font-weight: 700;
+}
+
+.carddd {
+    padding: 10px;
+    margin: 15px;
+    justify-content: center;
+    border-radius: 15px;
+    border-color: white;
+    background-color: rgb(39, 36, 36);
+}
+.VG{
+    text-decoration: none;
+
+}
+.text{
+    font-weight: 700;
+}
+.footer{
+    font-size: smaller ;
+    font-weight: 600;
+   
+}
+.copyright{
+    font-size: 8px;
 }
