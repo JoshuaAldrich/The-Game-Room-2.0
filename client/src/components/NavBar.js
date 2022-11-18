@@ -1,6 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap'
-
+import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap';
 
 
   const  NavBar = () => {
@@ -14,12 +13,14 @@ import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap'
               <Nav className="shadow-lg p-2  m-2 rounded bg-body border border-dark">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
-                <Nav.Link href="/signup">Sign up</Nav.Link>
+                <Navbar.Text>User: <a href="/login">Jio</a></Navbar.Text>
 
                 <NavDropdown title="Games" id="basic-nav-dropdown">
                   <NavDropdown.Item href="/RPS">Rock Paper Scissors</NavDropdown.Item>
                   <NavDropdown.Item href="/HoT">Heads or Tails</NavDropdown.Item>
                   <NavDropdown.Item href="/HoL">High or Low</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
