@@ -4,6 +4,7 @@
 // import React, { useState } from "react";
 
 const HoT = () => {
+  <div className='m-5 p-5 bg-white text-center border border-danger border border-3 rounded'></div>
   // const [result, setResult] = useState("");
 
   // async function heads() {
