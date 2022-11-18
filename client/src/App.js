@@ -8,7 +8,7 @@ import HoT from "./components/headsOrTails";
 import HoL from './pages/HoL';
 import RPS from "./components/rockPaperScissors";
 import Home from "./pages/Home";
-import Login from "./pages/Login"
+import Login from "./pages/login"
 import Footer from "./components/Footer"
 // import Nav from "./components/Nav";
 // import { useState } from "react";
