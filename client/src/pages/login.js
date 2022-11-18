@@ -17,7 +17,7 @@ const Login = () => {
         });
         console.log(formState);
     };
-
+// form that handles the data that is sent to the server side
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         console.log(event);
