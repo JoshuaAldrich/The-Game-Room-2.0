@@ -14,7 +14,7 @@ import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap'
               <Nav className="shadow-lg p-2  m-2 rounded bg-body border border-dark">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
-                <Navbar.Text>User: <a href="/login">Jio</a></Navbar.Text>
+                <Nav.Link href="/signup">Sign up</Nav.Link>
 
                 <NavDropdown title="Games" id="basic-nav-dropdown">
                   <NavDropdown.Item href="/RPS">Rock Paper Scissors</NavDropdown.Item>

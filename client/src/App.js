@@ -13,24 +13,15 @@ import { setContext } from '@apollo/client/link/context';
 
 
 
-<<<<<<<<< Temporary merge branch 1
-
-=========
 import NavBar from "./components/NavBar"
->>>>>>>>> Temporary merge branch 2
 import HoT from "./components/headsOrTails";
 import HoL from './pages/HoL';
 import RPS from "./components/rockPaperScissors";
 import Home from "./pages/Home";
 import Login from "./pages/Login"
-<<<<<<<<< Temporary merge branch 1
-import Nav from "./components/Nav";
-import { useState } from "react";
-=========
 import Footer from "./components/Footer"
 // import Nav from "./components/Nav";
 // import { useState } from "react";
->>>>>>>>> Temporary merge branch 2
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from "./pages/Signup";
 
@@ -54,37 +45,21 @@ const client = new ApolloClient({
 })
 
 const App = () => {
-<<<<<<<<< Temporary merge branch 1
-  let [user, setUser] = useState(null);
-=========
->>>>>>>>> Temporary merge branch 2
 
   return (
     <ApolloProvider client={client}>
 
-<<<<<<<<< Temporary merge branch 1
-      <div className="flex-column justify-flex-start min-100-vh">
-        <Nav user={user} />
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-=========
       <div className="flex-column justify-flex-start min-100-vh bg-dark">
         <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Login" element={<Login />} />
->>>>>>>>> Temporary merge branch 2
+            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/RPS" element={<RPS />} />
             <Route path="/HoL" element={<HoL />} />
             <Route path="/HoT" element={<HoT />} />
           </Routes>
-<<<<<<<<< Temporary merge branch 1
-=========
           <Footer />
->>>>>>>>> Temporary merge branch 2
         </div>
 
     </ApolloProvider>
