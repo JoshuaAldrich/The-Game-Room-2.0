@@ -6,7 +6,8 @@ Play a series of chance-based games and compete with other users for the high sc
 
 ## Usage
 
-[Navigate to the webpage](https://fathomless-anchorage-22375.herokuapp.com/) and click login to create a new account or login to an existing account.
+[Navigate to the webpage](https://tranquil-island-69050.herokuapp.com/) and click login to create a new account or login to an existing account.
+![Alt text](client\src\images\tranquil-island-69050.herokuapp.com_.png)
 
 ## Credits
 
