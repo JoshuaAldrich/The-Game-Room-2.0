@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap';
+import {Link} from "react-router-dom";
 
 
   const  NavBar = () => {
@@ -12,7 +13,7 @@ import { Navbar, Nav, Container, NavDropdown,} from 'react-bootstrap';
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="shadow-lg p-2  m-2 rounded bg-body border border-dark">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/login"> Login</Nav.Link>
                 <Navbar.Text>User: <a href="/login">Jio</a></Navbar.Text>
 
                 <NavDropdown title="Games" id="basic-nav-dropdown">
