@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import headsImg from "../images/coin.svg";
 import RPSImg from "../images/Rock.png";
-import HoLImg from "../images/HoL.jpg";
+import HoLImg from "../images/HoLImg.jpg";
 import hangmanImg from "../images/hangman.png";
 import diceImg from "../images/diceImage.jpg";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ const Home = () => {
             We have a wide array of games for our users to enjoy! Check out the
             games below.
           </p>
-          <div className="row rounded shadow-lg p-3 bg-danger mb-2 text-white border border-white">
+          <div className="row rounded shadow-lg p-3 bg-danger mb-2 text-white border border-white border border-2">
             <Card style={{ width: "18rem" }}>
               <Card.Img variant="top" src={headsImg} />
               <Card.Body>
